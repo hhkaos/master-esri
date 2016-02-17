@@ -1,4 +1,4 @@
-* Raúl: hhkaos
+* Raúl Jiménez: hhkaos
 * SamuelSanchezHernandez
 * GeoLuiggi: Luis Iñigo
 * Manuel Garcia Montes: GMManuel
@@ -10,3 +10,4 @@
 * Jorge:jorgefcm
 * Luis S: Ambientolucho
 * sara: smilgam
+* Raúl García: Rastar20
