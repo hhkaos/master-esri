@@ -5,7 +5,7 @@
 * [Celia: @chelia](https://github.com/chelia)
 * [Alejandro Baratas García - Nieto - @andromani](https://github.com/jandromani)
 * [Eva: @evamg](https://github.com/evamg)
-* [Iván: @IvanGarciaGanado](https://github.com/IvanGarciaGanado)
+* [Iván: @IvanGargan](https://github.com/IvanGargan)
 * [Lidia: @cucali](https://github.com/cucali)
 * [Jorge: @jorgefcm](https://github.com/jorgefcm)
 * [Luis S: @Ambientolucho](https://github.com/Ambientolucho)
