@@ -12,3 +12,4 @@
 * sara: smilgam
 * Raúl García: Rastar20
 * Carlos Herrera  -- https://github.com/MundoGister
+* Cristina: CrisHM
