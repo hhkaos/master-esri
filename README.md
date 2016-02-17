@@ -14,3 +14,4 @@
 * Carlos Herrera  -- https://github.com/MundoGister
 * Cristina: CrisHM
 * Nacho: naxotik
+* Eliseo: eliseocarrillo
