@@ -15,3 +15,4 @@
 * Cristina: CrisHM
 * Nacho: naxotik
 * Eliseo: eliseocarrillo
+* Manuel García Montes --> GMManuel
