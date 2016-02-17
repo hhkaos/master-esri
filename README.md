@@ -8,3 +8,4 @@
 * Iván: https://github.com/IvanGarciaGanado
 * Lidia: cucali
 * Jorge:jorgefcm
+* Luis S: Ambientolucho
