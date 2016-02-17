@@ -17,6 +17,7 @@ console.log('Añadir una propiedad a un objeto');
 console.log('--------------------------------------');
 
 luis['last-name'] = 'Trueba';
+luis.city = 'Granada';
 
 console.log('obj = ', obj);
 
