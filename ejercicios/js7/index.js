@@ -1,9 +1,19 @@
 'use strict';
 
+$('#btnHelp').click(function(){
+  $('#help').toggleClass('hidden');
+});
+
 /*
-  Introduce un disparador cuando hagas clic en el botón 'Acercar a Madrid'
-  var featureLayer = new FeatureLayer(URL_DEL_FEATURE);
+  Recorre el array y añade los features al mapa.
+
+  Para añadir una capa se hace así:
+  var featureLayer = new FeatureLayer(url_layer);
   map.addLayer(featureLayer);
+
+  Opcional:
+  Añade al elemento #features (que es un <ul>) los
+  un elemento <li> con el nombre (name) de cada capa
 */
 var features = [{
   'name': 'Estaciones de metro',

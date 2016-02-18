@@ -6,7 +6,7 @@ var $myBtn = $('#btn');
 // Le añado un listener (o disparador), cuando se haga click
 $myBtn.click(function(){
   
-  if($(this).hasClass('active')){
+  if($myBtn.hasClass('active')){
     // Si myBtn contiene la clase active la elimino
     $(this).removeClass('active');  
   }else{
@@ -20,7 +20,7 @@ $myBtn.click(function(){
 */
 
 // Selecciono la única imagen que hay en el DOM
-var $ribbon = $('img')[0];
+var $ribbon = $('img')[1];
 
 // Cuando paso el ratón por encima del elemento
 $myBtn.mouseover(function(){

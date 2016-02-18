@@ -28,6 +28,7 @@ nav{
 
 ul{
   padding: 1rem;
+  display: inline-block;
 }
 ul li{
   display: inline-block;
@@ -50,4 +51,9 @@ ul li{
 #help.hidden{
   
   bottom: -100px;
+}
+
+#btnHelp{    
+  float: right; 
+  margin: 1rem;
 }
