@@ -33,32 +33,30 @@
   <script>
     'use strict';
 
-    var map, madrid;
+    var map;
 
     require([
       'esri/map',
-      'esri/arcgis/utils',
-      'esri/geometry/Point',
+      'esri/layers/FeatureLayer',
       'jquery',
       'dojo/domReady!'
-    ], function(Map, arcgisUtils, Point, $) {
-
-      arcgisUtils.createMap('574544730342428baca4b4b7c3c18509','mapDiv').then(function(response){
-        madrid = new Point(-3.688,40.419);
-        map = response.map;
-
-        $.getScript('index.js');
+    ], function(Map, featureLayer, $) {
+      map = new Map('mapDiv', {
+        center: [-3.674, 40.439],
+        zoom: 7,
+        basemap: 'streets'
       });
+
+      $.getScript('index.js');
+      
     });
   </script>
 </head>
 <body class="claro">
   <div id="header">
-    <h1 class="bold">Mapa de delitos</h1>
+    <h1 class="bold">Mapa de metro</h1>
     <nav>
-      <ul>
-        <li><button id="btnZoom">Acercar a Madrid</button></li>
-        <li><button id="btnHelp">Mostrar ayuda</button></li>
+      <ul id="features">
       </ul>
     </nav>
   </div>
@@ -66,7 +64,7 @@
   <div id="mapDiv"></div>
   <div id="help" class="hidden">
     <p>
-      Este mapa muestra un listado de delitos (ficticios) sucedidos en España durante el año 2016
+      Este mapa muestra las estaciones y la líneas de metro de Madrid | Creado por: <span id="authors"></span>
     </p>
   </div>
   

@@ -34,7 +34,7 @@ console.log('--------------------------------------');
 var me = {
   'name': 'Raul',
   'age': 31,
-  'friends': [luis],
+  'friends': [luis, luis, luis],
   'address': {
     'street': 'Avenida America',
     'number': 45,
@@ -57,7 +57,11 @@ console.log('Recorrer un objeto con un bucle');
 console.log('--------------------------------------');
 
 for(var property in me) {    
+    // Este if evita que el bucle acceda a variables del navegador
     if (me.hasOwnProperty(property)) {
         console.log('me[' + property + '] = ' + me[property]);
+        //console.log('me[' + property + '] = ' + me.property); // Incorrecto
+    }else{
+      console.log('Esta propiedad no es mia, me[' + property + '] = ' + me[property]);
     }
 }

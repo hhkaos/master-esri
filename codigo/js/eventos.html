@@ -6,12 +6,23 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600%7CSource+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .active{
+      box-shadow: 0px 0px 4px #004EFF;
+    }
+
+  </style>
 </head>
  
 <body>
   <div id="header">
     <h1>Eventos (<strong>recuerda abrir la consola</strong> de Chrome DevTools)</h1>
-    <p class="back"><a href="index.html">&lt; Volver atrás</a></p>
+    <p class="back">
+      <a href="index.html">&lt; Volver atrás</a>
+
+      <button id="btn">Disparador</button>
+    </p>
     <p><a href="eventos.js">Abrir código de ejemplo</a>:</p>
   </div>
   <iframe src="eventos.js"></iframe>

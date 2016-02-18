@@ -10,6 +10,13 @@ console.log('--------------------------------------');
 console.log('Definir una funcion');
 console.log('--------------------------------------');
 
+// Función que devuelve un valor
+function suma(a, b){
+  return a + b;
+}
+console.log('suma(3, 4) = ' + suma(3, 4));
+
+
 // Una forma de definir funciones
 function printObj(obj){
   for(var property in obj) {    
@@ -37,12 +44,12 @@ printObjRecomended(map);
 console.log('--------------------------------------');
 console.log('Definir una funcion en un objeto (y "this")');
 console.log('--------------------------------------');
-
+/*
 map.printBasemap = function(){
   console.log('this.basemap = ', this.basemap);
 };
+*/
 
-/*
   //Equivale a:
   
   var map = { 
@@ -52,7 +59,7 @@ map.printBasemap = function(){
       console.log('this.basemap = ', this.basemap);
     }
   };
-*/
+
 
 map.printBasemap();
 

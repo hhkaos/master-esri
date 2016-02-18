@@ -1,0 +1,53 @@
+html, body, #mapDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+#mapDiv {
+  margin-top: 57px;
+}
+#header{
+  border-bottom: 7px solid #000;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  top: 0;
+}
+h1{
+  margin: 0;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+nav{
+  display: inline-block;
+  float: right;
+}
+
+ul{
+  padding: 1rem;
+}
+ul li{
+  display: inline-block;
+}
+
+#help{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background-color: #fefefe;
+  padding: 1rem;
+  border-top: 4px solid #ccc;
+  width: 100%;
+  text-align: center;
+  font-size: .9rem;
+  box-shadow: 0 2px 12px white;
+  transition: bottom 1s;
+}
+
+#help.hidden{
+  
+  bottom: -100px;
+}
