@@ -1,64 +1,70 @@
 'use strict';
 
-// Recupero el elemento con id="myBtn"
-var $myBtn = $('#btn');
+var eventClickWithJquery = function(){
+  // Recupero el elemento con id="myBtn"
+  var $myBtn = $('#header');
 
-// Le añado un listener (o disparador), cuando se haga click
-$myBtn.click(function(){
-  
-  if($myBtn.hasClass('active')){
-    // Si myBtn contiene la clase active la elimino
-    $(this).removeClass('active');  
-  }else{
-    // En caso contrario la añado
-    $(this).addClass('active');  
-  }
-});
+  // Le añado un listener (o disparador), cuando se haga click
+  $myBtn.click(function(){
+    
+    if($myBtn.hasClass('active')){
+      // Si myBtn contiene la clase active la elimino
+      $(this).removeClass('active');  
+    }else{
+      // En caso contrario la añado
+      $(this).addClass('active');  
+    }
+  });
+};
 
-/*
-    Otro ejemplo
-*/
 
-// Selecciono la única imagen que hay en el DOM
-var $ribbon = $('img')[1];
+var eventMouseWithJquery = function(){
 
-// Cuando paso el ratón por encima del elemento
-$myBtn.mouseover(function(){
-  console.log('Estoy encima -> oculto el lazo');
-  $ribbon.style.visibility = 'hidden';
-});
+  var $header = $('#header');
+  var $btns = $('.btn');
 
-// Cuando dejo de estar encimar del elemento con el ratón
-$myBtn.mouseout(function(){
-  console.log('Ya no estoy encima -> muestro el lazo');
-  $ribbon.style.visibility = 'visible';
-});
+  // Cuando paso el ratón por encima del elemento
+  $header.mouseover(function(){
+    console.log('Estoy encima -> oculto el lazo\n');
+    $btns.css('visibility', 'hidden')
+  });
 
-/*
-    Ejemplo completo
-*/
+  // Cuando dejo de estar encimar del elemento con el ratón
+  $header.mouseout(function(){
+    console.log('Ya no estoy encima -> muestro el lazo\n');
+    $btns.css('visibility', 'visible');
+  });
+};
 
-// Le asignamos al elemento con id="btnLibraries"
-// un disparador al hacer click
-$('#btnLibraries').click(function() {
-  // Si tiene clase hidden se la quito, sino se la pongo
-  $('#libraries').toggleClass( 'hidden' );
-});
 
-// Igual con trends
-$('#btnTrends').click(function() {
-  $('#trends').toggleClass( 'hidden' );
-});
+var jqueryAjax = function(){
+  var spreadsheetID = '1wQkCTSzmV81XaPyKyioIKghqQgc_73exPmuDxI5vLAk',
+      spreadsheetTAB = 1,
+      spreadsheetURL = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/' + spreadsheetTAB + '/public/values';
 
-// Asignamos a LOS elementos button que sean hijos de
-// elementos que incluyan la clase btnClose un disparador
-$('.btnClose button').click(function() {
-  // Accedemos al elemento abuelo del botón y si tiene
-  // la clase hidden se la quito, sino se la pongo
-  $(this).parent().parent().toggleClass( 'hidden' );
-});
+  // Pedimos un recurso por AJAX usando JSON
+  $.getJSON( spreadsheetURL + '?alt=json', function( data ) {
+    var rows = data.feed.entry;
 
-/*
-  Equivalencias entre JavaScript nativo y la biblioteca
-  https://github.com/oneuijs/You-Dont-Need-jQuery
-*/
+    for(var r in rows){
+      console.log('row['+ r +'].gsx$nombre.$t = ', data.feed.entry[r].gsx$nombre.$t);
+    }
+    
+    console.log('\ndata === ', data);
+  });
+
+  // Pedimos un recurso por AJAX usando JSONP (alternativa 2)
+  $.ajax({
+    jsonp: 'callback',
+    dataType: 'jsonp',
+    url: spreadsheetURL + '?alt=json-in-script',
+
+    success: function( response ) {
+      // ...
+    }
+  });
+
+  // Enlace para ver y editar la hoja
+  // http://bit.ly/1R9RKHz
+};
+

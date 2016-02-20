@@ -40,15 +40,71 @@
       'esri/layers/FeatureLayer',
       'jquery',
       'dojo/domReady!'
-    ], function(Map, featureLayer, $) {
+    ], function(Map, FeatureLayer, $) {
       map = new Map('mapDiv', {
         center: [-3.674, 40.439],
         zoom: 7,
         basemap: 'streets'
       });
 
-      $.getScript('index.js');
+
+      $('#btnHelp').click(function(){
+        $('#help').toggleClass('hidden');
+      });
+
+      /*
+        Recorre el array y añade los features al mapa.
+
+        Para añadir una capa se hace así:
+        var featureLayer = new FeatureLayer(url_layer);
+        map.addLayer(featureLayer);
+
+        Opcional:
+        Añade al elemento #features (que es un <ul>) los
+        un elemento <li> con el nombre (name) de cada capa
+      */
+      var features = [{
+        'name': 'Líneas de metro',
+        'url': 'http://services3.arcgis.com/qJLpaK6NOU9IJKjD/arcgis/rest/services/L%C3%ADneas_de_Metro_de_Madrid/FeatureServer/0'
+      },{
+        'name': 'Estaciones de metro',
+        'url': 'http://services1.arcgis.com/8MFSmLQvO5AV2Ytj/arcgis/rest/services/Estaciones_de_Metro_Madrid/FeatureServer/0'
+      }];
+
+      for(var f in features){
+        var featureLayer = new FeatureLayer(features[f].url);
+        map.addLayer(featureLayer);
+      }
       
+      /*
+       Recupera los datos del spreadsheet y añade al elemento con id="authors"
+       una lista con los nombres de los autores concatenada por comas.
+       https://spreadsheets.google.com/feeds/list/1wQkCTSzmV81XaPyKyioIKghqQgc_73exPmuDxI5vLAk/1/public/values?alt=json
+      */
+
+      var spreadsheetID = '1wQkCTSzmV81XaPyKyioIKghqQgc_73exPmuDxI5vLAk',
+          spreadsheetTAB = 1,
+          spreadsheetURL = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/' + spreadsheetTAB + '/public/values';
+
+      var datos;
+      // Pedimos un recurso por AJAX usando JSON
+      $.getJSON( spreadsheetURL + '?alt=json', function( data ) {
+        //var items = [];
+        datos = data;
+        console.log('Recuperamos usando JSON');
+        console.log(data);
+
+        var rows = datos.feed.entry;
+        var tmp = '';
+
+        for(var r in rows){
+          tmp += datos.feed.entry[r].gsx$nombre.$t + ', ';
+        
+        }
+
+        $('#authors').text(tmp);
+        
+      });
     });
   </script>
 </head>

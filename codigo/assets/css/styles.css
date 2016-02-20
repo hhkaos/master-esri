@@ -1,0 +1,23 @@
+.mb1{
+  margin-bottom: 1rem;
+}
+
+.ml1{
+ margin-left: 1rem; 
+}
+
+pre#console{
+  
+}
+
+pre#code{
+  padding: 1.5rem 1.5rem 1.5rem 0;
+}
+
+form.form-inline{
+  display: inline-block;
+}
+
+#header.active{
+  text-transform: uppercase;
+}

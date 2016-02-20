@@ -47,7 +47,56 @@
         madrid = new Point(-3.688,40.419);
         map = response.map;
 
-        $.getScript('index.js');
+        /*
+          Introduce un disparador cuando hagas clic en el botón 'Acercar a Madrid'
+          que ejecute el siguiente código
+          map.centerAndZoom(madrid, 16);
+
+
+        var myBtn = document.getElementById('btnZoom');
+
+        myBtn.addEventListener('click', function(){
+          map.centerAndZoom(madrid, 16);
+        });
+        */
+
+
+        // jQuery
+        $('#btnZoom').click(function(){
+          map.centerAndZoom(madrid, 16);
+        });
+
+        /*
+         Introduce un disparador cuando hagas clic en el botón 'Mostrar ayuda'
+         añada una clase hidden (en elemento con id="help") 
+         si no la tiene o que la quite si la tiene
+        */
+
+        $('#btnHelp').click(function(){
+          $('#help').toggleClass('hidden');
+        });
+
+
+        // Con JavaScript
+        var myBtn = document.getElementById('btnHelp');
+        var help = document.getElementById('help');
+
+        // Le añado un listener (o disparador), cuando se haga click
+        myBtn.addEventListener('click', function(){
+          
+          if(help.classList.contains('hidden')){
+            // Si myBtn contiene la clase active la elimino
+            help.classList.remove('hidden');  
+          }else{
+            // En caso contrario la añado
+            help.classList.add('hidden');  
+          }
+        });
+
+
+
+
+
       });
     });
   </script>
