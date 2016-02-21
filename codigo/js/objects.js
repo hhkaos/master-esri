@@ -53,7 +53,7 @@ var complexObject = function(){
 };
 
 var newObjContructor = function(){
-  // Creamos una funcion EsriMap que se asigna propiedades
+  // Creamos una función EsriMap que se asigna propiedades
   var EsriMap = function(obj){
     
     if(obj && obj.basemap){
@@ -64,26 +64,27 @@ var newObjContructor = function(){
       this.basemap = 'satellite';
     }
 
-    // Establezco una propiedad setCenter que contiene una funcion
-    // y que cambia una propiedad de la funcion
+    // Establezco una propiedad setCenter que contiene una función
+    // y que cambia una propiedad de la función
     this.setZoom = function(val){
       this.zoom = val;
     };
   };
 
-  // Con new creamos una variable de tipo myMap
-  var myMap = new EsriMap({
+  // Con new creamos una variable de tipo myMap que 
+  // se comporta como un objeto y sus propiedades.
+  var topoMap = new EsriMap({
     'basemap': 'topo'
   });
-  var myMap2 = new EsriMap();
+  var defaultMap = new EsriMap();
 
-  console.log('myMap = ', myMap);
-  console.log('myMap2 = ', myMap2);
+  console.log('topoMap = ', topoMap);
+  console.log('defaultMap = ', defaultMap);
    
-  console.log ('\n----myMap2.setZoom(12);----','\n'); 
-  myMap2.setZoom(12);
-  console.log('myMap = ', myMap);
-  console.log('myMap2 = ', myMap2);
+  console.log ('\n----defaultMap.setZoom(12);----','\n'); 
+  defaultMap.setZoom(12);
+  console.log('topoMap = ', topoMap);
+  console.log('defaultMap = ', defaultMap);
 };
 
 /*var inheritance = function(){

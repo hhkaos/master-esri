@@ -29,18 +29,18 @@ var declareVariables = function(){
 };
 
 var variableTypes = function(){
-  // Númericas (integer & floats)
+  // Numéricas (integer & floats)
   // -----------------------------
   var counter = 16;   // variable tipo entero
   var price = 19.99;  // variable tipo decimal
 
   // Cadenas de texto (strings)
   // -----------------------------
-  var msg = 'Bienvenido a nuestro sitio web';
-  var txt = 'Una frase con "comillas dobles" dentro';
-  var txt = 'Una frase con \'comillas simples\' dentro';
+  var featureService = 'http://services3.arcgis.com/arcgis/rest/services/Gasolinerasshape';
+  var basemaps = 'streets';
+  var complexString = 'Una frase con \'comillas simples\' dentro';
 
-  // Colecciones (arrays)
+  // Colecciones - Array(s)
   // -----------------------------
   // Definiendo los días de la semana en cadenas de texto
   var day1 = 'Lunes', day2 = 'Martes', /*..., */ day5 = 'Viernes';

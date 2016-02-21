@@ -48,7 +48,7 @@ var mathOperators = function(){
   console.log('x-- \t// ', x--);          // 2
   console.log('x \t// ', x);              // 1
   
-  // El prefijo (++ / --) realiza la operación 1º
+  // El prefijo (++ / --) realiza primero la operación
   console.log('++x \t// ', ++x);          // 2
   console.log('--x \t// ', --x);          // 1
 };

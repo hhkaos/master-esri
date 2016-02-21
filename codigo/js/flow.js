@@ -57,7 +57,7 @@ var ifStructure = function(){
 
 var nonBooleanValues = function(){
   /*
-    ¿Como interpreta los valores no booleanos en un if?
+    ¿Cómo se interpretan los valores no booleanos en un if?
   */
   var values = [-1, 0, 1, null, '', undefined, 'texto', {}, []];
   for(var i in values){
@@ -72,7 +72,7 @@ var nonBooleanValues = function(){
     Valores 'true': 
       - Numbers: cualquiera !== 0
       - String: cualquiera salvo la cadena vacía ('')
-      - Objetos: todos, incluído el vacío ({})
+      - Objetos: todos, incluido el vacío ({})
     
     Valores 'false': 
       - Otros: undefined, null
@@ -83,11 +83,11 @@ var forStructure = function(){
   /*
     for(initialization; condition; increment) { ... }
   */
-  var i;
-  var days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+  var i,
+      days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
    
-  // Establecemos de donde hasta donde y con qué incremento
-  for(i = 0; i < days.length; i++) {
+  // Establecemos de dónde hasta dónde y con qué incremento
+  for(i = 0; i < days.length; i+=2) {
     console.log('days[' + i + '] === ', days[i]);
   }
 
@@ -105,17 +105,23 @@ var tryCatchStructure = function(){
     try{
       ....
     }catch(e){
-    
+      ...
     }
 
     Evita que se detenga la ejecución
   */
   try{
     console.log('invented // ', invented);
+    
+    // No llega a ejecutarse esta orden porque falla la anterior
+    // (invented no está declarada) y sigue por el catch
+    alert('Hasta aquí no llego');
   }catch(e){
     console.log('e // ', e); 
   }
-  console.log('Termino la ejecución',null);
+
+  // Hasta aquí si llega gracias al try/catch
+  console.log('Termino la ejecución', '');
 }
 
 
