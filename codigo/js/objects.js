@@ -52,35 +52,6 @@ var complexObject = function(){
   console.log('me.address[\'postal-code\'] === ', me.address['postal-code']);
 };
 
-var forInObj = function(){
-  var luis = { "name": "Luis González" },
-      carlos = { "name": "Carlos Mota" };
-      
-  var me = {
-    "name": "Raúl",
-    "age": 31,
-    "friends": [luis, carlos],
-    "address": {
-      "street": "Avenida América",
-      "number": 45,
-      "city": "Madrid",
-      "postal-code": 28002
-    }
-  };
-
-  for(var property in me) {    
-    // Este if evita que el bucle acceda a variables del navegador
-    if (me.hasOwnProperty(property)) {
-        console.log('me[' + property + '] = ', me[property]);
-        // me.property se puede usar ya que en lugar de
-        // tomar el valor de la variable, JavaScript
-        // buscaría una propiedad llamada 'property'
-    }else{
-      console.log('Esta propiedad no es mia, me[' + property + '] = ', me[property]);
-    }
-  }
-}
-
 var newObjContructor = function(){
   // Creamos una funcion EsriMap que se asigna propiedades
   var EsriMap = function(obj){
@@ -115,12 +86,86 @@ var newObjContructor = function(){
   console.log('myMap2 = ', myMap2);
 };
 
+var inheritance = function(){
+  'use strict';
+  class Polygon {
+    constructor(height, width) {
+      this.height = height;
+      this.width = width;
+      this.getHeight = function(){
+        return height;
+      }
+    }
+  }
+
+  class Square extends Polygon {
+    constructor(sideLength) {
+      super(sideLength, sideLength);
+    }
+    get area() {
+      return this.height * this.width;
+    }
+    set sideLength(newLength) {
+      this.height = newLength;
+      this.width = newLength;
+    }
+  }
+
+  var square = new Square(2);
+  console.log('square === ', square);
+  console.log('square.hasOwnProperty(\'getHeight\') === ', square.hasOwnProperty('getHeight'));
+};
+
+var forInObj = function(){
+  var luis = { "name": "Luis González" },
+      carlos = { "name": "Carlos Mota" };
+      
+  var me = {
+    "name": "Raúl",
+    "age": 31,
+    "friends": [luis, carlos],
+    "address": {
+      "street": "Avenida América",
+      "number": 45,
+      "city": "Madrid",
+      "postal-code": 28002
+    }
+  };
+
+  for(var property in me) {    
+    // Este if evita que el bucle acceda a variables del navegador
+    if (me.hasOwnProperty(property)) {
+        console.log('me[' + property + '] = ', me[property]);
+        // me.property se puede usar ya que en lugar de
+        // tomar el valor de la variable, JavaScript
+        // buscaría una propiedad llamada 'property'
+    }else{
+      console.log('Esta propiedad no es mia, me[' + property + '] = ', me[property]);
+    }
+  }
+
+  /*
+    hasOwnProperty es una función que nos permite saber si la 
+    propiedad está definida en el objeto o está heradada,
+    por ejemplo:
+  */
+  console.log('me.friends.length // ', me.friends.length);
+  console.log('me.friends.hasOwnProperty(\'length\') //', me.friends.hasOwnProperty('length'));
+
+  console.log('me.friends.push(luis) // ', me.friends.push(luis));
+  console.log('me.friends.hasOwnProperty(\'push\') //', me.friends.hasOwnProperty('push'));
+
+  // En este caso la propiedad push viene heredada de 
+  // Array.prototype.push
+}
 
 var objects = {
   "Nuevo objeto vacío": newEmptyObject,
   "Nuevo objeto con propiedades": nonEmptyObject,
   "Añadir una propiedad": addObjProp,
   "Crear un objeto más complejo": complexObject,
-  "Recorrer objeto con un bucle for": forInObj,
-  "Operador new para construir objetos": newObjContructor
+  "Operador new para construir objetos": newObjContructor,
+  // TODO: "Herencia de objetos": inheritance,
+  "Recorrer objeto con un bucle for": forInObj
+  
 };

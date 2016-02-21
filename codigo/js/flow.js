@@ -4,23 +4,23 @@ var ifStructure = function(){
   var printMsg = true;
    
   if(printMsg) {
-    console.log('Me imprimo -> true // true');
+    console.log('Me imprimo -> true // ', printMsg);
   }
 
   if(printMsg == true) {
-    console.log('Me imprimo -> true == true // true');
+    console.log('Me imprimo -> true == true // ', printMsg == true);
   }
   
   var printMsg = false;
  
   if(!printMsg) {
-    console.log('Me imprimo -> !false // true');
+    console.log('Me imprimo -> !false // ', !printMsg);
   }
 
   var isFirstMsg = true;
    
   if(!printMsg && isFirstMsg) {
-    console.log('Me imprimo -> !false && true // true');
+    console.log('Me imprimo -> !false && true // ', !printMsg && isFirstMsg);
   }
 
   // Error común al principio:
@@ -35,7 +35,7 @@ var ifStructure = function(){
   console.log('a // ', a);
  
   if(a >= 18) {
-    console.log('a >= 18 //', a >= 18);
+    console.log('a >= 18 // ', a >= 18);
   }
   else {
     console.log('a < 18 //', a < 18);
@@ -62,9 +62,9 @@ var nonBooleanValues = function(){
   var values = [-1, 0, 1, null, '', undefined, 'texto', {}, []];
   for(var i in values){
     if(values[i]){
-      console.log('El valor: \'' + values[i] + '\' // true');
+      console.log('El valor: \'' + values[i] + '\' // ', 'true');
     }else{
-      console.log('El valor: \'' + values[i] + '\' // false');
+      console.log('El valor: \'' + values[i] + '\' // ', 'false');
     }  
   }
 
@@ -115,7 +115,7 @@ var tryCatchStructure = function(){
   }catch(e){
     console.log('e // ', e); 
   }
-  console.log('Termino la ejecución');
+  console.log('Termino la ejecución',null);
 }
 
 

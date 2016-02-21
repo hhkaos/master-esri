@@ -97,9 +97,11 @@ var getAJAXRequests = (function() {
   }
   var runCode = function(str, obj){
     var params = [str, obj];
+    
     if(document.getElementById('console').innerHTML === ''){
       document.getElementById('console').innerHTML += '\n'
     }
+    
     for(var p in params){
       if(params[p] && params[p].toString){
         var tmp = params[p].toString();
@@ -116,12 +118,14 @@ var getAJAXRequests = (function() {
         }
       }else if(typeof params[p] === "boolean" && params[p] === false){
         document.getElementById('console').innerHTML += 'false';
+      }else if(typeof params[p] === "undefined"){
+        document.getElementById('console').innerHTML += 'undefined';
+      }else if(params[p] === null){
+        document.getElementById('console').innerHTML += 'null';
       }
       
     }
-    if(obj === null){
-      document.getElementById('console').innerHTML += 'null'
-    }
+    
     document.getElementById('console').innerHTML += '\n';
     //document.getElementById('console').innerHTML += str;
 

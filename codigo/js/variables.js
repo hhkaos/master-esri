@@ -67,27 +67,28 @@ var methodsTypes = function(){
   var fruits = ['banana', 'melon', 'orange'];
 
   // Para trabajar con Number(s)
-  console.log('n.toFixed(2) // ', n.toFixed(2));
+  console.log('n.toFixed(2) \t\t// ', n.toFixed(2));  // 231.82
 
   // Para contar el número de caracteres
-  console.log('hello.length // ', hello.length);
+  console.log('hello.length \t\t// ', hello.length);  // 5    
 
   // Para concatenar cadenas
-  console.log('hello + world // ', hello + world); 
-  console.log('hello.concat(world) // ', hello.concat(world));
+  console.log('hello + world \t\t// ', hello + world); // 'Hola Mundo!'
+  console.log('hello.concat(world) \t// ', hello.concat(world));  // 'Hola Mundo!'
 
   // Para buscar subcadenas en una cadena
-  console.log('hello.indexOf(\'a\') // ', hello.indexOf('a'));
-  console.log('hello.indexOf(\'b\') // ', hello.indexOf('b'));
+  console.log('hello.indexOf(\'a\') \t// ', hello.indexOf('a')); // 3
+  console.log('hello.indexOf(\'b\') \t// ', hello.indexOf('b')); // -1
 
-  console.log('fruits // ', fruits);
+  console.log('fruits \t\t\t// ', fruits);  // [banana,melon,orange]
 
   // Para contar número de elementos en un Array
-  console.log('fruits.length // ', fruits.length);
+  console.log('fruits.length \t\t// ', fruits.length);  // 3
 
   // Para añadir elementos
   fruits.push('apple', 'peach');
-  console.log('fruits (after push) // ', fruits);
+  console.log('fruits (after push) \t// ', fruits); // [banana,melon,orange,apple,peach]
+  console.log('fruits.length \t\t// ', fruits.length);  // 5
 };
 
 var variables = {
