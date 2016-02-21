@@ -65,7 +65,7 @@ var jqueryAjax = function(){
   $.ajax({
     jsonp: 'callback',
     dataType: 'jsonp',
-    url: spreadsheetURL + '?alt=json-in-script',
+    url: sheetURL + '?alt=json-in-script',
 
     success: function( response ) {
       // ...

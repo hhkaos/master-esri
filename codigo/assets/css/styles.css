@@ -64,6 +64,10 @@ select:not([multiple]) {
 #mySelect {
     border-radius: 0
 }
+a.doubts{
+  color: #5BC0DE;
+}
+
 
 pre > code {
     padding: 0;
