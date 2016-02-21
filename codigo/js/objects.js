@@ -86,7 +86,7 @@ var newObjContructor = function(){
   console.log('myMap2 = ', myMap2);
 };
 
-var inheritance = function(){
+/*var inheritance = function(){
   'use strict';
   class Polygon {
     constructor(height, width) {
@@ -114,7 +114,7 @@ var inheritance = function(){
   var square = new Square(2);
   console.log('square === ', square);
   console.log('square.hasOwnProperty(\'getHeight\') === ', square.hasOwnProperty('getHeight'));
-};
+};*/
 
 var forInObj = function(){
   var luis = { "name": "Luis González" },
