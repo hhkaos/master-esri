@@ -149,17 +149,21 @@ var getAJAXRequests = (function() {
     var l = $('#lesson').val();
     var s = $('#snippets').val();
     
-    //debugger;
-    var txt =cleanFn(samples[l][s]);
-    $('#code, #console').removeClass('prettyprinted');
-    $('#code').text('\n' + txt);
-    $('#console').empty();
-    samples[l][s]();
-    var reqs = getAJAXRequests();
-    if($('#console').html() === '' && reqs.length == 0){
-      $('#console').html('<p><em>El código no ha producido ningún mensaje en la consola</em></p>');
+    if(samples[l] && samples[l][s]){
+      var txt =cleanFn(samples[l][s]);
+      $('#code, #console').removeClass('prettyprinted');
+      $('#code').text('\n' + txt);
+      $('#console').empty();
+      samples[l][s]();
+      
+      var reqs = getAJAXRequests();
+      if($('#console').html() === '' && reqs.length == 0){
+        $('#console').html('<p><em>El código no ha producido ningún mensaje en la consola</em></p>');
+      }
+      PR.prettyPrint();
+    }else{
+      location.search = '?lesson=1&snippet=1';
     }
-    PR.prettyPrint();
   };
 
   if(qsLesson && qsSnippet){
