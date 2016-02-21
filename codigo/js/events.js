@@ -27,7 +27,7 @@ var addEventListenerMouse = function(){
 
   // Cuando paso el ratón por encima de la cabecera
   header.addEventListener('mouseover', function(){
-    console.log('Estoy encima -> oculto los botones\n');
+    console.log('Estoy encima -> oculto los botones');
     
     // Recorro todos los botones y los oculto
     for(var b = 0; b < btns.length; b++){
@@ -37,7 +37,7 @@ var addEventListenerMouse = function(){
 
   // Cuando dejo de estar encimar del elemento con el ratón
   header.addEventListener('mouseout', function(){
-    console.log('Ya no estoy encima -> muestro los botones\n');
+    console.log('Ya no estoy encima -> muestro los botones');
 
     // Recorro todos los botones y los muestro
     for(var b = 0; b < btns.length; b++){
@@ -49,4 +49,9 @@ var addEventListenerMouse = function(){
     Existen muchos otros eventos; lista completa:
     https://developer.mozilla.org/en-US/docs/Web/Events
   */
+};
+
+var events = {
+  "Asociar un comportamiento al hacer clic en un elemento": addEventListenerClick,
+  "Asociar un comportamiento al pasar el ratón por encima": addEventListenerMouse
 };

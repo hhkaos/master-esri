@@ -47,7 +47,7 @@ var complexObject = function(){
   console.log('me === ', me);
   console.log('me.name === ', me.name);
   console.log('me.friends[0] === ', me.friends[0]);
-  console.log('(me.friends[0]).name === ', (me.friends[0]).name);
+  console.log('me.friends[0].name === ', me.friends[0].name);
   console.log('me.address.street === ', me.address.street);
   console.log('me.address[\'postal-code\'] === ', me.address['postal-code']);
 };
@@ -113,4 +113,14 @@ var newObjContructor = function(){
   myMap2.setZoom(12);
   console.log('myMap = ', myMap);
   console.log('myMap2 = ', myMap2);
+};
+
+
+var objects = {
+  "Nuevo objeto vacío": newEmptyObject,
+  "Nuevo objeto con propiedades": nonEmptyObject,
+  "Añadir una propiedad": addObjProp,
+  "Crear un objeto más complejo": complexObject,
+  "Recorrer objeto con un bucle for": forInObj,
+  "Operador new para construir objetos": newObjContructor
 };

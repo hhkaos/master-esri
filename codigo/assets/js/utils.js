@@ -1,56 +1,33 @@
 'use strict';
-(function(){
 
-  var samples = {
-    "Variables":{
-      "Declarar variables": declareVariables,
-      "Tipos de variables": variableTypes,
-      "Métodos de algunos tipos": methodsTypes,
-    },
-    "Operadores":{
-      "Operadores matemáticos": mathOperators,
-      "Operadores lógicos": logicOperators,
-      "Operadores relacionales": relationalsOperators,
-      "Operador typeof": typeofOperator,
-      "Valores null y undefined": nullAndUndefined
-    },
-    "Control del flujo":{
-      "Estructura if": ifStructure,
-      "Valores lógicos de variables != boolean": nonBooleanValues,
-      "Estructura for": forStructure,
-      "Estructura try{...}catch(e){...}": tryCatchStructure
-    },
-    "Objetos":{
-      "Nuevo objeto vacío": newEmptyObject,
-      "Nuevo objeto con propiedades": nonEmptyObject,
-      "Añadir una propiedad": addObjProp,
-      "Crear un objeto más complejo": complexObject,
-      "Recorrer objeto con un bucle for": forInObj,
-      "Operador new para construir objetos": newObjContructor
-    },
-    "Funciones":{
-      "Cómo definir una función": functionDefine,
-      "Definir una función de ámbito global": functionInGlobalScope,
-      "Asignar una función en un objeto y usar this": functionInObj,
-      "Declarar una función anónima": anonymFunction,
-      'Ámbitos de una variable': nestedFunctions
-    },
-    "Objeto window":{
-      "Acceder a los elementos del DOM": accessDOMElements,
-      "Acceder y modificar atributos de elementos del DOM": accessModifyAttrs,
-      "Objeto window": windowObj
-    },
-    "Eventos":{
-      "Asociar un comportamiento al hacer clic en un elemento": addEventListenerClick,
-      "Asociar un comportamiento al pasar el ratón por encima": addEventListenerMouse
-    },
-    "jQuery":{
-      "Recuperar un elemento y asignar un evento": eventClickWithJquery,
-      "Comportamientos: mouseover y mouseout": eventMouseWithJquery,
-      "Recuperar elementos por AJAX": jqueryAjax
+var getAJAXRequests = (function() {
+    var oldSend = XMLHttpRequest.prototype.send,
+        currentRequests = [];
+
+    XMLHttpRequest.prototype.send = function() {
+        currentRequests.push(this); // add this request to the stack
+        oldSend.apply(this, arguments); // run the original function
+
+        // add an event listener to remove the object from the array
+        // when the request is complete
+        this.addEventListener('readystatechange', function() {
+            var idx;
+
+            if (this.readyState === XMLHttpRequest.DONE) {
+                idx = currentRequests.indexOf(this);
+                if (idx > -1) {
+                    currentRequests.splice(idx, 1);
+                }
+            }
+        }, false);
+    };
+
+    return function() {
+        return currentRequests;
     }
+}());
 
-  };
+(function(){
 
   var updateURL = function(){
     var l = $('#lesson')[0].selectedIndex + 1;
@@ -110,8 +87,19 @@
     updateURL();
   }
 
+  function safe(input) {
+    if(input.replace){
+      input = input.replace(/&/g, '&amp;');
+      input = input.replace(/</g, '&lt;');
+      input = input.replace(/>/g, '&gt;');
+    }
+    return input;
+  }
   var runCode = function(str, obj){
     var params = [str, obj];
+    if(document.getElementById('console').innerHTML === ''){
+      document.getElementById('console').innerHTML += '\n'
+    }
     for(var p in params){
       if(params[p] && params[p].toString){
         var tmp = params[p].toString();
@@ -120,20 +108,21 @@
           //prettyprint
           document.getElementById('console').innerHTML += JSON.stringify(params[p], null, 2);
         }else if(typeof params[p] === 'string' || typeof params[p] === 'number'){
-          document.getElementById('console').innerHTML += params[p];
+          document.getElementById('console').innerHTML += safe(params[p]);
         }else if (typeof params[p] === 'object' && params[p].length >= 0){
           document.getElementById('console').innerHTML += '['+ params[p]+']';
         }else{
           document.getElementById('console').innerHTML += params[p].toString();
         }
+      }else if(typeof params[p] === "boolean" && params[p] === false){
+        document.getElementById('console').innerHTML += 'false';
       }
-      if(p == 1 || params.length == 1){
-        document.getElementById('console').innerHTML += '\n';
-      }
+      
     }
     if(obj === null){
       document.getElementById('console').innerHTML += 'null'
     }
+    document.getElementById('console').innerHTML += '\n';
     //document.getElementById('console').innerHTML += str;
 
     
@@ -148,8 +137,8 @@
 
   var cleanFn = function(fn){
     fn = fn.toString(); 
-    fn = fn.substr(fn.indexOf('\n')+1); 
-    fn = fn.substr(0,(fn.length-3));
+    fn = fn.substr(fn.indexOf('\n') + 1); 
+    fn = fn.substr(0, (fn.length - 2));
     return fn;
   };
   var refreshPreElements = function(){
@@ -159,9 +148,13 @@
     //debugger;
     var txt =cleanFn(samples[l][s]);
     $('#code, #console').removeClass('prettyprinted');
-    $('#code').text(txt);
+    $('#code').text('\n' + txt);
     $('#console').empty();
     samples[l][s]();
+    var reqs = getAJAXRequests();
+    if($('#console').html() === '' && reqs.length == 0){
+      $('#console').html('<p><em>El código no ha producido ningún mensaje en la consola</em></p>');
+    }
     PR.prettyPrint();
   };
 
@@ -205,16 +198,22 @@
 
   $('#prev').click(function(){
     
+    var lesson = document.getElementById('lesson');
     var snippets = document.getElementById('snippets');
     if((snippets.selectedIndex -1) >= 0){
       snippets.selectedIndex--;
       //$('#snippets').change();
+      updateURL();
+    }else if((lesson.selectedIndex + 1) >= 2){
+      lesson.selectedIndex--;
+      snippets.selectedIndex = 0;
       updateURL();
     }
   });
 
   $('#next').click(function(){
     
+    var lesson = document.getElementById('lesson');
     var snippets = document.getElementById('snippets');
     if((snippets.selectedIndex + 1) < $("#snippets option").length){
       snippets.selectedIndex++;
@@ -224,8 +223,15 @@
       /*var l = $('#lesson')[0].selectedIndex + 1;
       var s = $('#snippets')[0].selectedIndex + 1;
       location.search = '?lesson='+ l +'&snippet='+ s;*/
+    }else if((lesson.selectedIndex + 1) < $("#lesson option").length){
+      //console.log("Hay más");
+      lesson.selectedIndex++;
+      snippets.selectedIndex = 0;
+      updateURL();
     }
   });
 
 //(document.getElementById('snippets')).selectedIndex  
 }());
+
+

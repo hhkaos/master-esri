@@ -1,48 +1,57 @@
+'use strict';
+
 var ifStructure = function(){
   var printMsg = true;
    
   if(printMsg) {
-    console.log('Hola Mundo');
+    console.log('Me imprimo -> true // true');
   }
 
   if(printMsg == true) {
-    console.log('Hola Mundo');
+    console.log('Me imprimo -> true == true // true');
   }
   
   var printMsg = false;
  
   if(!printMsg) {
-    console.log('Me imprimo');
+    console.log('Me imprimo -> !false // true');
   }
 
   var isFirstMsg = true;
    
   if(!printMsg && isFirstMsg) {
-    console.log('Mi primer mensaje');
+    console.log('Me imprimo -> !false && true // true');
   }
 
-  // Error - Se asigna el valor 'false' a la variable
-  if(printMsg = false) {
-    //...
+  // Error común al principio:
+  // Asignar (=) en lugar de comparar (==)
+  var isFirstMsg = false;
+  if(printMsg = true) {
+    // Devuelve false
+    console.log('Error común: false = true // ', printMsg = true)
   }
 
-  var age = 18;
+  var a = 18;
+  console.log('a // ', a);
  
-  if(age >= 18) {
-    console.log('Eres mayor de edad');
+  if(a >= 18) {
+    console.log('a >= 18 //', a >= 18);
   }
   else {
-    console.log('Eres menor de edad');
+    console.log('a < 18 //', a < 18);
   }
 
-  if(age < 18) {
-    console.log('Eres menor de edad');
+  var b = 20;
+  console.log('b // ', b);
+
+  if(b < 20) {
+    console.log('b < 20 // ', b < 20);
   }
-  else if(age < 30) {
-    console.log('Aún eres joven');
+  else if(b < 40) {
+    console.log('b < 40 // ', b < 40);
   }
   else {
-    console.log('La sabiduría la da la experiencia');
+    console.log('b > >= 40 // ', b >= 40);
   }
 };
 
@@ -53,25 +62,38 @@ var nonBooleanValues = function(){
   var values = [-1, 0, 1, null, '', undefined, 'texto', {}, []];
   for(var i in values){
     if(values[i]){
-      console.log('El valor: "' + values[i] + '" === true\n');
+      console.log('El valor: \'' + values[i] + '\' // true');
     }else{
-      console.log('El valor: "' + values[i] + '" === false\n');
+      console.log('El valor: \'' + values[i] + '\' // false');
     }  
   }
+
+  /* 
+    Valores 'true': 
+      - Numbers: cualquiera !== 0
+      - String: cualquiera salvo la cadena vacía ('')
+      - Objetos: todos, incluído el vacío ({})
+    
+    Valores 'false': 
+      - Otros: undefined, null
+  */
 };
 
 var forStructure = function(){
   /*
-    for(initialization; condition; increment) {
-      
-    }
+    for(initialization; condition; increment) { ... }
   */
-
   var i;
-  var days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  var days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
    
+  // Establecemos de donde hasta donde y con qué incremento
   for(i = 0; i < days.length; i++) {
-    alert(days[i]);
+    console.log('days[' + i + '] === ', days[i]);
+  }
+
+  //Recorremos el objeto al completo
+  for(i in days){
+    console.log('days[' + i + '] === ', days[i]);
   }
 
 };
@@ -89,9 +111,17 @@ var tryCatchStructure = function(){
     Evita que se detenga la ejecución
   */
   try{
-    console.log('invented = ', invented);
+    console.log('invented // ', invented);
   }catch(e){
-    console.log('e = ', e); 
+    console.log('e // ', e); 
   }
   console.log('Termino la ejecución');
 }
+
+
+var flow = {
+  "Estructura if": ifStructure,
+  "Valores lógicos de variables != boolean": nonBooleanValues,
+  "Estructura for": forStructure,
+  "Estructura try{...}catch(e){...}": tryCatchStructure
+};

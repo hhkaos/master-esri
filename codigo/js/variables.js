@@ -43,58 +43,55 @@ var variableTypes = function(){
   // Colecciones (arrays)
   // -----------------------------
   // Definiendo los días de la semana en cadenas de texto
-  var day1 = 'Lunes', day2 = 'Martes', /*..., */ day7 = 'Domingo';
+  var day1 = 'Lunes', day2 = 'Martes', /*..., */ day5 = 'Viernes';
 
   // Definición equivalente en un Array
-  var days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  var days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
-  console.log('days[0] === ', days[0]);
-  console.log('days[1] === ', days[1]);
-  console.log('days[6] === ', days[6]);
+  // El elemento entre corchetes indica el índice, y en
+  // informática el primer elemento suele ser 0.
+  console.log('days[0] // ', days[0]);
+  console.log('days[1] // ', days[1]);
+  console.log('days[4] // ', days[4]);
 
-  // Booleanos (boolean)
+  // Booleanos (boolean): valores lógicos
   // -----------------------------
   var valid = false;
   var prime = true;
-  console.log('valid === ', valid);
-  console.log('prime === ', prime);
 };
 
 var methodsTypes = function(){
-  /************************************
-    Para trabajar con Number(s)
-  ************************************/
   var n = 231.8273;
-  n.toFixed(2); // 231.82
-
-  /************************************
-    Para trabajar con Strings
-  ************************************/
   var hello = 'Hola ';
   var world = 'Mundo!';
-
-  // Para contar el número de caracteres
-  console.log('hello.length === ',hello.length); // 5
-
-  // Para concatenar cadenas
-  console.log(hello + ' ' + world); // Hola Mundo!
-  console.log(hello.concat(' ' + world));  // Hola Mundo!
-
-  // Para busacar subcadenas en una cadena
-  var pos = hello.indexOf('a'); // pos = 3
-  var pos = hello.indexOf('b'); // pos = -1
-
-  /************************************
-    Para trabajar con Array(s)
-  ************************************/
-  //Y otros métodos: lastIndexOf, substring, split, etc.
   var fruits = ['banana', 'melon', 'orange'];
 
-  // Para contar
-  var n = fruits.length; // n = 3
+  // Para trabajar con Number(s)
+  console.log('n.toFixed(2) // ', n.toFixed(2));
+
+  // Para contar el número de caracteres
+  console.log('hello.length // ', hello.length);
+
+  // Para concatenar cadenas
+  console.log('hello + world // ', hello + world); 
+  console.log('hello.concat(world) // ', hello.concat(world));
+
+  // Para buscar subcadenas en una cadena
+  console.log('hello.indexOf(\'a\') // ', hello.indexOf('a'));
+  console.log('hello.indexOf(\'b\') // ', hello.indexOf('b'));
+
+  console.log('fruits // ', fruits);
+
+  // Para contar número de elementos en un Array
+  console.log('fruits.length // ', fruits.length);
 
   // Para añadir elementos
-  fruits.push('apple', 'peach'); // fruits = ['banana', 'melon, 'orange', 'apple', 'peach']
-
-  // contact, join, pop, shift, Y otras como: unshift, reverse.
+  fruits.push('apple', 'peach');
+  console.log('fruits (after push) // ', fruits);
 };
+
+var variables = {
+  "Declarar variables": declareVariables,
+  "Tipos de variables": variableTypes,
+  "Métodos de algunos tipos": methodsTypes,
+}; 

@@ -17,18 +17,18 @@
   
   <div class="container">
     <div class="row text-center mb1">
-      <div class="col-md-12">
+      <div class="col-md-12 mt1 mb1">
         <button id="prev" class="btn btn-primary pull-left">< Anterior</button>
       
         <form class="form-inline">
           
           <label for="lesson">Lección: </label>
-          <select id="lesson" class="form-control">
+          <select id="lesson" class="form-control btn btn-success">
             
           </select>
 
           <label for="snippets" class="ml1">Snippets: </label>
-          <select id="snippets" class="form-control">
+          <select id="snippets" class="form-control btn btn-info">
             
           </select>
         </form>
@@ -39,15 +39,25 @@
     <div class="row">
       <div class="col-md-6">
         <p>Código:</p>
-        <pre id="code" class="prettyprint lang-javascript"></pre>
+        <pre class="code">
+          <code id="code" class="prettyprint lang-javascript"></code>
+        </pre>
         <!--<button id="btnRun" class="btn btn-primary btn-block">Ejecutar</button>-->
       </div>
       <div class="col-md-6">
         <p>Respuesta en la consola:</p>
-        <pre id="console"></pre>
+        <pre class="code">
+          <code id="console"></code>
+        </pre>
       </div>
     </div>
   </div>
+
+  <footer id="footer" class="footer">
+      <div class="container text-center">
+        <p class="text-muted">Autor: Raúl Jiménez Ortega | Licencia Creative Commons: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0 International</a>.</p>
+      </div>
+    </footer>
   <!--<iframe src="objetos.js"></iframe>-->
 <!--
   <a href="https://github.com/hhkaos/master-esri/tree/master/codigo/js"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:2" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>-->
@@ -72,6 +82,18 @@
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/run_prettify.js"></script>
 
+  <script>
+    var samples = {
+      "Variables": variables,
+      "Operadores": operators,
+      "Control del flujo": flow,
+      "Objetos": objects,
+      "Funciones": functions,
+      "Objeto window": windowObjSnippets,
+      "Eventos": events,
+      "jQuery": jQuerySnippets
+    };
+  </script>
   <script src="../assets/js/utils.js"></script>
 
   
