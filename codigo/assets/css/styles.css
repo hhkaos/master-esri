@@ -9,8 +9,10 @@ body{
  margin-left: 1rem; 
 }
 
-pre#console{
+.code.console{
   line-height: 2.5rem;
+  padding-left: 9.5px;
+  text-indent: 0;
 }
 
 pre#code{
@@ -42,8 +44,9 @@ pre,
 
 .code{
   border: 1px solid white;
-  padding-top: 0;
-  padding-bottom: 0;
+  /* padding-top: 0; */
+  /* padding-bottom: 0; */
+  padding-left: 0;
 }
 
 .text-muted{color: #ccc;border-top: 1px solid #333;margin: 2rem 0;padding: 2rem 0;font-size: 1.2rem;}
@@ -87,6 +90,7 @@ pre code {
     word-wrap: normal;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
+    text-indent: 0px;
 }
 
 @media (max-width: 600px) {

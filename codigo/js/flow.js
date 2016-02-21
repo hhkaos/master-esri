@@ -25,10 +25,9 @@ var ifStructure = function(){
 
   // Error común al principio:
   // Asignar (=) en lugar de comparar (==)
-  var isFirstMsg = false;
-  if(printMsg = true) {
-    // Devuelve false
-    console.log('Error común: false = true // ', printMsg = true)
+  var printMsg = false;
+  if(printMsg = true) { // devuelve el valor asignado, por tanto: true
+    console.log('Error común: ' + printMsg + ' = true // ', printMsg = true)
   }
 
   var a = 18;

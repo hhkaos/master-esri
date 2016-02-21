@@ -44,6 +44,9 @@ var getAJAXRequests = (function() {
   var qsLesson = qs('lesson') || 1;
   var qsSnippet = qs('snippet')|| 1;
 
+  if(qs('min') === 'true'){
+    $('.dispensable').hide();
+  }
   
   /*
   
@@ -98,10 +101,6 @@ var getAJAXRequests = (function() {
   var runCode = function(str, obj){
     var params = [str, obj];
     
-    if(document.getElementById('console').innerHTML === ''){
-      document.getElementById('console').innerHTML += '\n'
-    }
-    
     for(var p in params){
       if(params[p] && params[p].toString){
         var tmp = params[p].toString();
@@ -152,7 +151,7 @@ var getAJAXRequests = (function() {
     if(samples[l] && samples[l][s]){
       var txt =cleanFn(samples[l][s]);
       $('#code, #console').removeClass('prettyprinted');
-      $('#code').text('\n' + txt);
+      $('#code').text(txt);
       $('#console').empty();
       samples[l][s]();
       
