@@ -157,7 +157,7 @@ var getAJAXRequests = (function() {
       
       var reqs = getAJAXRequests();
       if($('#console').html() === '' && reqs.length == 0){
-        $('#console').html('<p><em>El código no ha producido ningún mensaje en la consola</em></p>');
+        $('#console').html('// El código no ha producido ningún mensaje en la consola');
       }
       //PR.prettyPrint();
       hljs.initHighlightingOnLoad();
