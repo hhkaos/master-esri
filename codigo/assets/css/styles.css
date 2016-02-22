@@ -13,6 +13,7 @@ body{
   line-height: 2.5rem;
   padding-left: 9.5px;
   text-indent: 0;
+  /* background-color: white; */
 }
 
 pre#code{

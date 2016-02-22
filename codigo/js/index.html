@@ -8,6 +8,8 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600%7CSource+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
   
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <link rel="stylesheet" href="../assets/css/monokai-sublime.css">
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -41,11 +43,11 @@
     <div class="row">
       <div class="col-md-6">
         <p>Código JavaScript: <a href="https://github.com/hhkaos/master-esri/issues" class="pull-right doubts">¿Tienes alguna duda?</a></p>
-        <pre class="code"><code id="code" class="prettyprint lang-javascript"></code></pre>
+        <pre class="code"><code id="code" class="javascript"></code></pre>
       </div>
       <div class="col-md-6">
         <p>Respuesta en la consola:</p>
-        <pre class="code console"><code id="console"></code></pre>
+        <pre class="code console"><code id="console" class="javascript"></code></pre>
       </div>
     </div>
   </div>
@@ -72,7 +74,8 @@
 
   <!-- Utilidades para añadir interacción a esta página -->
   <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/run_prettify.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+
 
   <script>
     var samples = {
