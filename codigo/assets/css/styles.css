@@ -47,6 +47,7 @@ pre,
   /* padding-top: 0; */
   /* padding-bottom: 0; */
   padding-left: 0;
+  background-color: #23241f;
 }
 
 .text-muted{color: #ccc;border-top: 1px solid #333;margin: 2rem 0;padding: 2rem 0;font-size: 1.2rem;}
@@ -90,7 +91,7 @@ pre code {
     word-wrap: normal;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
-    text-indent: 0px;
+    text-indent: 0;
 }
 
 @media (max-width: 600px) {
