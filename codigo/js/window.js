@@ -20,7 +20,7 @@ var accessDOMElements = function(){
 
 var accessModifyAttrs = function(){
   // Acceder a un atributo
-  var codeElement = document.getElementsByClassName('prettyprint');
+  var codeElement = document.getElementsByClassName('container');
   var getAttr = codeElement[0].getAttribute('class');
   console.log('codeElement[0].getAttribute(\'class\') = ', getAttr);
 
