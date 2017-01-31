@@ -1,0 +1,15 @@
+h1{
+  text-align: center; /* Alineación */
+}
+
+p{
+  line-height: 2.5rem; /* Interlineado */
+}
+
+strong{
+  text-transform: uppercase; /* Minúsculas, capitalizar, ...*/
+}
+
+a{
+  text-decoration: none; /* Subrayado, tachado, ... */
+}
