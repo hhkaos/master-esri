@@ -1,5 +1,6 @@
 # Participantes
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul)
+* Alberto Cañivano - [Github](https://www.github.com/acanivano) | [Linkedin](https://es.linkedin.com/in/acanivano)
 * Carlos Palomino Correor - [Github](http://www.github.com/CarlosPalomino92) | [Linkedin] (in progress)
 * Leticia Matas Álvarez - [Github](http://www.github.com/aicelm) | [Linkedin](http://es.linkedin.com/in/matasalvarezleticia)
 * Jaime García Cazorla - [Github](http://www.github.com/jaimegc91) | [Linkedin](https://www.linkedin.com/in/jaimegarc%C3%ADacazorla/)
