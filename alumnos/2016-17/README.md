@@ -1,5 +1,6 @@
 # Participantes
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul)
+* Rubén Garzón Vera - [Github](http://www.github.com/rubengarzonvera) | [Linkedin](http://es.linkedin.com/in/rubén-garzón-vera-a4154447)
 * Jorge F. Matesanz Vicente - [Github](http://www.github.com/JorgeTasio) | [Linkedin](https://www.linkedin.com/in/jorge-matesanz-vicente-13388249/)
 * Elena Clemente Ortiz - [Github](http://www.github.com/ElenaClemente) 
 * Danilo Palermo - [Github](http://www.github.com/padanilo) | [Linkedin](https://es.linkedin.com/in/danilo-palermo-68344b109)
