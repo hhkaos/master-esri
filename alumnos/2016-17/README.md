@@ -23,3 +23,4 @@
 * Eduardo Tormo Polo - [Github](http://www.github.com/diuardet) | [Linkedin](http://es.linkedin.com/in/diuardet)
 * Antonio Javier Mateo Castillo - [Github](http://www.github.com/NerviMateo) | [Linkedin](https://es.linkedin.com/in/antonio-javier-mateo-castillo
 )
+* Rafael Alonso Lombraña - [Github](http://www.github.com/Rafael-Alonso) | [Linkedin](http://es.linkedin.com/in/rafaelalonso)
