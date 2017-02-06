@@ -1,6 +1,6 @@
 # Participantes
-* Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://magadir.github.io)
-* María Ballesteros Rincón - [Github](http://www.github.com/Magadir) | Linkedin | [Curriculum]()
+* Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
+* María Ballesteros Rincón - [Github](http://www.github.com/Magadir) | Linkedin | [Curriculum](https://magadir.github.io)
 * Andrea Martín Rodríguez - [Github](http://www.github.com/anmaro13) | [Linkedin](http://es.linkedin.com/in/anmaro13) | [Curriculum](https://anmaro13.github.io)
 * Alberto Cañivano - [Github](https://www.github.com/acanivano) | [Linkedin](https://es.linkedin.com/in/acanivano) | [Curriculum](https://acanivano.github.io)
 * Carlos Palomino Correor - [Github](http://www.github.com/CarlosPalomino92) | Linkedin | [Curriculum](https://CarlosPalomino92.github.io)
