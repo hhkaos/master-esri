@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petición a la API de Google Drive</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    // Google Drive edit -> https://goo.gl/L2ZBx6
+    var spreadsheetID = '1u0ViEdXk2Sv-Tb1q5-WBgCJFdtIPan1kIUZ-oPVcPyg',
+    spreadsheetTAB = 1,
+    spreadsheetURL = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/' + spreadsheetTAB + '/public/values';
+
+    var datos;
+    // Pedimos un recurso por AJAX usando JSON
+    $.getJSON( spreadsheetURL + '?alt=json', function( data ) {
+      console.log(data);
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Petición a la API de Google Drive</h1>
+  <p>Abre la consola para ver la respuesta de la API</p>
+</body>
+</html>

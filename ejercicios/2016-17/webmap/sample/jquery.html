@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petición a la API de Idealista</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+
+    var endpoint = "http://hhkaos2.maps.arcgis.com/sharing/rest/content/items/6f7af3c9a0814c769a47f8e1eb6128aa?f=json";
+    $.getJSON(endpoint, function(response){
+      console.log(response);
+    });
+
+  </script>
+</head>
+
+<body>
+  <h1>Petición a la API de ArcGIS Online</h1>
+  <p>Abre la consola para ver la respuesta de la API</p>
+</body>
+</html>

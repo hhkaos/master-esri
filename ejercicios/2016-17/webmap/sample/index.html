@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cargar un webmap y personalizar la app</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.19/esri/css/esri.css">
+
+  <style>
+  html,body,#mapDiv{
+    font-family: 'Open Sans', sans-serif;
+    padding:0;
+    margin:0;
+    height:100%;
+  }
+  .title{
+    position: fixed;
+    left: 5rem;
+    top: 1rem;
+    right: 5rem;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, .8);
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: 1px dotted #ccc;
+    text-transform: uppercase;
+    color: #333;
+  }
+  </style>
+
+  <script>
+  var dojoConfig = (function () {
+    return {
+      async: true,
+      isDebug: false,
+      parseOnLoad: false,
+      packages: [
+        {
+          name: 'jquery',
+          location: 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1',
+          main: 'jquery'
+        }
+      ]
+    };
+  })();
+  </script>
+  <script src="http://js.arcgis.com/3.19/"></script>
+  <script>
+  'use strict';
+
+  require([
+    "esri/map",
+    "esri/arcgis/utils",
+    "jquery",
+    "dojo/domReady!"
+  ], function(Map, arcgisUtils, $){
+    arcgisUtils.createMap("6f7af3c9a0814c769a47f8e1eb6128aa", "mapDiv").then(function (response) {
+      map = response.map;
+    });
+
+    var endpoint = "//hhkaos2.maps.arcgis.com/sharing/rest/content/items/6f7af3c9a0814c769a47f8e1eb6128aa?f=json";
+    $.getJSON(endpoint, function(response){
+      console.log(response);
+      $(".title").text(response.title);
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div class="title">Título</div>
+  <div id="mapDiv"></div>
+</body>
+</html>
