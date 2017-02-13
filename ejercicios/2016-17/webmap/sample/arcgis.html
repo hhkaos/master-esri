@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cargar un webmap</title>
+
+  <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.19/esri/css/esri.css">
+  <style>
+  html,body,#mapDiv{
+    padding:0;
+    margin:0;
+    height:100%;
+  }
+  </style>
+
+  <script>var dojoConfig = { parseOnLoad:true };</script>
+  <script src="http://js.arcgis.com/3.19/"></script>
+  <script>
+  require([
+    "esri/map",
+    "esri/arcgis/utils",
+    "dojo/domReady!"
+  ], function(Map, arcgisUtils){
+    arcgisUtils.createMap("6f7af3c9a0814c769a47f8e1eb6128aa", "mapDiv").then(function (response) {
+      map = response.map;
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+</html>
