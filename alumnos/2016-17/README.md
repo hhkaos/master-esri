@@ -23,4 +23,4 @@
 * Eduardo Tormo Polo - [Github](http://www.github.com/diuardet) | [Linkedin](http://es.linkedin.com/in/diuardet) | [Curriculum](https://diuardet.github.io)
 * Antonio Javier Mateo Castillo - [Github](http://www.github.com/NerviMateo) | [Linkedin](https://es.linkedin.com/in/antonio-javier-mateo-castillo) | [Curriculum](https://NerviMateo.github.io)
 * Rafael Alonso Lombraña - [Github](http://www.github.com/Rafael-Alonso) | [Linkedin](https://es.linkedin.com/in/rafael-alonso-lombraña-52aa63110) | [Curriculum](https://Rafael-Alonso.github.io)
-* Antonio Jesús Espín - [Github](https://ajespin.github.io/) | [Linkedin](https://es.linkedin.com/in/ajespin/es) | [Curriculum](https://ajespin.github.io)
+* Antonio Jesús Espín - [Github](https://github.com/ajespin) | [Linkedin](https://es.linkedin.com/in/ajespin/es) | [Curriculum](https://ajespin.github.io)
