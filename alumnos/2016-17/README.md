@@ -1,7 +1,7 @@
 # Participantes
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
 * María Ballesteros Rincón - [Github](http://www.github.com/Magadir) | [Linkedin](https://www.linkedin.com/in/mariaballesrin) | [Curriculum](https://magadir.github.io)
-* Andrea Martín Rodríguez - [Github](http://www.github.com/anmaro13) | [Linkedin](http://es.linkedin.com/in/anmaro13) | [Curriculum](https://anmaro13.github.io)
+* Andrea Martín Rodríguez - [Github](http://www.github.com/anmaro13) | [Linkedin](http://es.linkedin.com/in/anmaro13) | [Curriculum](https://anmaro13.github.io/Curriculum/)
 * Alberto Cañivano - [Github](https://www.github.com/acanivano) | [Linkedin](https://es.linkedin.com/in/acanivano) | [Curriculum](https://acanivano.github.io)
 * Carlos Palomino Correor - [Github](http://www.github.com/CarlosPalomino92) | Linkedin | [Curriculum](https://CarlosPalomino92.github.io)
 * Leticia Matas Álvarez - [Github](http://www.github.com/aicelm) | [Linkedin](http://es.linkedin.com/in/matasalvarezleticia) | [Curriculum](https://aicelm.github.io)
