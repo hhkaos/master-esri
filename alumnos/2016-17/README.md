@@ -10,7 +10,7 @@
 * Mónica Martí Gómez - [Github](http://www.github.com/EmeSiete) | [Linkedin](https://es.linkedin.com/in/mónica-martí-879b4a73) | [Curriculum](https://EmeSiete.github.io)
 * Adrián Pérez Beneito - [Github](http://www.github.com/AdriSolid) | [Linkedin](https://es.linkedin.com/in/adrián-pérez-beneito-414771a6) | [Curriculum](https://AdriSolid.github.io)
 * Tomás Labrador Fránquez - [Github](https://github.com/labrador10) | Linkedin | [Curriculum](https://labrador10.github.io)
-* Adrian Dominguez Rivas - [Github](http://www.github.com/adrianmasteresri93) | [Linkedin](https://es.linkedin.com/in/adrian-dominguez-rivas-5a923b138) | [Curriculum](https://adrianmastergis.github.io)
+* Adrian Dominguez Rivas - [Github](http://www.github.com/adrianmasteresri93) | [Linkedin](https://es.linkedin.com/in/adrian-dominguez-rivas-5a923b138) | [Curriculum](https://adrianmasteresri93.github.io) (not working)
 * Jose Morata Barrado - [Github](http://www.github.com/jammorata) | [Linkedin](https://es.linkedin.com/in/josé-antonio-morata-barrado-70304b11b) | [Curriculum](https://jammorata.github.io)
 * Eduard Romeu Moreno - [Github](http://www.github.com/eduardgeo) | [Linkedin](https://www.linkedin.com/in/eduard-romeu-moreno-62274358/) | [Curriculum](https://eduardgeo.github.io)
 * Rubén Garzón Vera - [Github](http://www.github.com/rubengarzonvera) | [Linkedin](http://es.linkedin.com/in/rubén-garzón-vera-a4154447) | [Curriculum](https://rubengarzonvera.github.io)
