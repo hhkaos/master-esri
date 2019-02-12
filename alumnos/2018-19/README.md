@@ -1,6 +1,7 @@
 # Participantes
 
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
+* Isabel Sierra Merino - [Github](http://github.com/siemeris) | [Linkedin](https://www.linkedin.com/in/isabelsierramerino/)
 
 # Ejemplos de código
 
