@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Mostrar un mapa con JSAPI 4.10</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.10/"></script>
+  <style>
+    html, body, #viewDiv {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  </style>
+  <script>
+    var map;
+    var modulos = ["esri/Map","esri/views/SceneView"];
+    var callback = function(Map, SceneView) {
+
+      map = new Map({
+        basemap: "streets",
+        ground: "world-elevation"
+      });
+
+      var view = new SceneView({
+        container: "viewDiv",
+        map: map,
+        scale: 50000000,
+        center: [-101.17, 21.78]
+      });
+    };
+
+    require(modulos, callback);
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
