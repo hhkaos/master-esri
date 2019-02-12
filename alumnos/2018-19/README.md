@@ -1,6 +1,7 @@
 # Participantes
 
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
+* Samuel Gato Martin - [Github](http://www.github.com/tiedra
 
 # Ejemplos de código
 
