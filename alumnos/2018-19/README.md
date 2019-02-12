@@ -1,7 +1,7 @@
 # Participantes
 
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
-
+* Ricardo Andrés Puentes - [Github](http://www.github.com/sinerf) 
 # Ejemplos de código
 
 1. [Mostrar un mapa con JSAPI 3.27](./code-samples/sample1.html)
