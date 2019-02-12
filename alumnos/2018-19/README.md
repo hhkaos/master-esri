@@ -1,6 +1,8 @@
 # Participantes
 
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
+* Roi Martínez Valladares - [Github](https://github.com/roimv) | [Linkedin](https://www.linkedin.com/in/roi-mart%C3%ADnez-valladares-35a49277/)
+
 
 # Ejemplos de código
 
