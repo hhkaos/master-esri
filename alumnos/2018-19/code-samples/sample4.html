@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Mostrar un mapa con JSAPI 3.27</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+        var map;
+        var modulos = [
+            "esri/map",
+            "esri/geometry/Extent",
+            "esri/SpatialReference",
+            "dojo/domReady!"
+        ];
+        var callback = function(Map, Extent, SpatialReference) {
+            // Extension de UK
+            var obj = {
+              "xmin": -3709239.6281097676,
+              "ymin": 6120539.535598724,
+              "xmax": 2552481.729010206,
+              "ymax": 8160490.946472966,
+              "spatialReference": {
+                "wkid": 102100
+              }
+            }
+            var sr = new SpatialReference({ wkid:obj.spatialReference.wkid });
+            var ext = new Extent(obj.xmin, obj.ymin, obj.xmax, obj.ymax, sr);
+
+            map = new Map("mapDiv", {
+                basemap: "satellite",
+                extent: ext
+            });
+        };
+
+        require(modulos, callback);
+    </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+
+</html>
