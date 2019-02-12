@@ -1,6 +1,7 @@
 # Participantes
 
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
+* Sergi González Ribas - [Github](http://github.com/GonzalezSergi)
 
 # Ejemplos de código
 
