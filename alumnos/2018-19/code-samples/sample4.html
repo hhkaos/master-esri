@@ -33,7 +33,7 @@
                 "wkid": 102100
               }
             }
-            var sr = new SpatialReference({ wkid:obj.spatialReference.wkid });
+            var sr = new SpatialReference({ wkid: obj.spatialReference.wkid });
             var ext = new Extent(obj.xmin, obj.ymin, obj.xmax, obj.ymax, sr);
 
             map = new Map("mapDiv", {
