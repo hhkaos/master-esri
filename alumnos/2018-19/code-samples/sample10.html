@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Directions Widget</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <style>
+        html, body, #map {
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0;
+        }
+        body {
+            background-color:#FFF;
+            overflow:hidden;
+            font-family:"Trebuchet MS";
+        }
+        .column {
+            float:left;
+            width: 50%;
+            height: 100%;
+        }
+    </style>
+
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script>
+      require([
+        "esri/urlUtils",
+        "esri/map",
+        "esri/dijit/Directions",
+        "dojo/domReady!"
+      ], function(
+        urlUtils,
+        Map,
+        Directions
+      ) {
+
+        var map = new Map("map", {
+          basemap: "streets",
+          center:[-98.56,39.82],
+          zoom: 4
+        });
+
+        var directions = new Directions({
+          map: map,
+          routeTaskUrl: "https://utility.arcgis.com/usrsvcs/appservices/sE5jHzqytKOOFAju/rest/services/World/Route/NAServer/Route_World"
+        },"dir");
+        directions.startup();
+
+      });
+    </script>
+  </head>
+  <body>
+      <div class="column">
+          <div id="dir"></div>
+      </div>
+      <div class="column">
+          <div id="map" class="column"></div>
+      </div>
+  </body>
+</html>
