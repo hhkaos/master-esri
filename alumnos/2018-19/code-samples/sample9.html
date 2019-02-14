@@ -52,7 +52,16 @@
         // Execute the queryTask
         var execute = function() {
           query.text = dom.byId("stateName").value;
-          queryTask.execute(query, showResults);
+
+          // Option a) Using 2nd parameters -> a callback
+          // queryTask.execute(query, showResults);
+
+          // Option b) Using the method ".addCallback" instead
+          // var promesa = queryTask.execute(query);
+          // promesa.addCallback(showResults);
+
+          // Option c) Using the method "".then"
+          queryTask.execute(query).then(showResults);
         }
 
         // Add the listener to the button
@@ -65,8 +74,8 @@
     US state name :
     <input type="text" id="stateName" value="California">
     <input id="execute" type="button" value="Get Details">
-    <br />
-    <br />
+    <br>
+    <br>
     <div id="info"></div>
   </body>
 </html>
