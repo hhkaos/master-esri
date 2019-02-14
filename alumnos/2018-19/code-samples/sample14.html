@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Pintar un gráfico directamente sobre el mapa con JSAPI 3.x</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+        var map, graphic;
+
+        require([
+            "esri/map",
+            "esri/layers/GraphicsLayer",
+            "esri/graphic",
+            "esri/geometry/Point",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/Color",
+            "dojo/domReady!"
+        ],function(
+            Map,
+            GraphicsLayer,
+            Graphic,
+            Point,
+            SimpleMarkerSymbol,
+            SimpleLineSymbol,
+            Color
+        ){
+
+            map = new Map("mapDiv", {
+                basemap: "gray",
+                center: [-3, 40],
+                zoom: 13
+            });
+
+            var line = new SimpleLineSymbol();
+            line.setWidth(2);
+            line.setColor(new Color([255, 255, 255, 1]));
+            marker = new SimpleMarkerSymbol();
+            marker.setOutline(line);
+            marker.setColor(new Color([0, 132, 168, 0.65]));
+
+            var graphicsLayer = new GraphicsLayer();
+            map.addLayer(graphicsLayer);
+
+            // create a new circle on the GraphicsLayer
+            map.on("click", function(e){
+                var graphic = new Graphic(new Point(e.mapPoint), marker);
+                graphicsLayer.add(graphic);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Pintar un gráfico directamente sobre el mapa con JSAPI 3.x</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script src="symbols.js"></script>
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+        var map, graphic;
+
+        require([
+            "esri/map",
+            "esri/graphic",
+            "dojo/domReady!"
+        ],function(Map, Graphic){
+
+            map = new Map("mapDiv", {
+                basemap: "satellite",
+                center: [-3, 40],
+                zoom: 6
+            });
+
+            // Defined at symbol.js
+            graphic = new Graphic(area);
+
+            map.on("load",function(){
+                // Adding graphics to the map (without a GraphicLayer)
+                map.graphics.add(graphic);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+
+</html>
