@@ -55,13 +55,13 @@
         ) {
             // Extension de UK
             var obj = {
-              "xmin": -3709239.6281097676,
-              "ymin": 6120539.535598724,
-              "xmax": 2552481.729010206,
-              "ymax": 8160490.946472966,
-              "spatialReference": {
-                "wkid": 102100
-              }
+                "xmin": -3709239.6281097676,
+                "ymin": 6120539.535598724,
+                "xmax": 2552481.729010206,
+                "ymax": 8160490.946472966,
+                "spatialReference": {
+                    "wkid": 102100
+                }
             }
             var sr = new SpatialReference({ wkid:obj.spatialReference.wkid });
             var ext = new Extent(obj.xmin, obj.ymin, obj.xmax, obj.ymax, sr);
@@ -83,18 +83,18 @@
 
             var search = new Search({
                 map: map
-             }, "search");
-             search.startup();
-             var params = {
-                 "map": map
-             };
-             var basemapToggle = new BasemapToggle(params, "basemapToggle")
-             basemapToggle.startup();
+            }, "search");
+            search.startup();
+            var params = {
+                "map": map
+            };
+            var basemapToggle = new BasemapToggle(params, "basemapToggle")
+            basemapToggle.startup();
 
-             var legendDijit = new Legend({
+            var legendDijit = new Legend({
                 map: map
-             }, "legendDiv");
-             legendDijit.startup();
+            }, "legendDiv");
+            legendDijit.startup();
 
             var locator = new Locator("https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer");
 
