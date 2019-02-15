@@ -8,7 +8,8 @@
 * Tania Trigo - [Github](https://github.com/taniatrigo)
 * Óscar Sesmilo Bermejo - [Github](https://github.com/oscarsesmilo)
 * Carolina - [Github](https://github.com/MCBian10)
-* Myriam - [Github](https://github.com/myriamDominguez)
+* Myriam Dominguez - [Github](https://github.com/myriamDominguez)
+* Sergi González Ribas - [Github](http://github.com/GonzalezSergi)
 
 # Ejemplos de código
 
