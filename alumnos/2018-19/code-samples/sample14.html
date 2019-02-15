@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Añadir un gráfico mediante clases con JSAPI 3.x</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script src="json.js"></script>
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+        var map, marker, g;
+        var modulos = [
+            "esri/map",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/Color",
+            "esri/graphic",
+            "esri/geometry/Point",
+            "dojo/domReady!"
+        ];
+        var callback = function(Map, SimpleMarkerSymbol, SimpleLineSymbol, Color, Graphic, Point) {
+
+            map = new Map("mapDiv", {
+                basemap: "satellite",
+                center: [-122.45, 37.75],
+                zoom: 13
+            });
+
+            var line = new SimpleLineSymbol();
+            line.setWidth(2);
+            line.setColor(new Color([255, 255, 255, 1]));
+            marker = new SimpleMarkerSymbol();
+            marker.setOutline(line);
+            marker.setColor(new Color([0, 132, 168, 0.65]));
+            graphic = new Graphic(new Point(-122.45, 37.75), marker)
+
+            map.on("load",function(){
+                // Adding graphics to the map (without a GraphicLayer)
+                map.graphics.add(graphic);
+            });
+        };
+        require(modulos, callback);
+    </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+
+</html>
