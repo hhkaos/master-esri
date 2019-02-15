@@ -11,6 +11,7 @@
 * Myriam Dominguez - [Github](https://github.com/myriamDominguez)
 * Sergi González Ribas - [Github](http://github.com/GonzalezSergi)
 * Roi Martínez Valladares - [Github](https://github.com/roimv) | [Linkedin](https://www.linkedin.com/in/roi-mart%C3%ADnez-valladares-35a49277/)
+* Marta Bescansa - [Github](https://github.com/martabescansa7)
 
 # Ejemplos de código
 
