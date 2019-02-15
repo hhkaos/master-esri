@@ -7,6 +7,7 @@
 * Samuel Gato Martin - [Github](http://www.github.com/tiedra)
 * Tania Trigo
 * [Óscar Sesmilo Bermejo](https://github.com/oscarsesmilo)
+* Carolina 
 
 # Ejemplos de código
 
