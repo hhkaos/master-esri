@@ -15,6 +15,7 @@
 * Isabel Sierra Merino - [Github](http://github.com/siemeris) | [Linkedin](https://www.linkedin.com/in/isabelsierramerino/)
 * Raquel - [Github](https://github.com/RMAP2)
 * Marina Valentín Ruiz - [Github](https://github.com/Oretana)
+* Ricardo Andrés Puentes - [Github](http://www.github.com/sinerf) 
 
 # Ejemplos de código
 
