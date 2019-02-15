@@ -4,6 +4,7 @@
 * Pablo Fernández Rodríguez - [Github](https://github.com/pablo-ferro)
 * Mar Roca - [Github](https://github.com/marroca13)
 * Ana Fernandez Monterrubio
+* Samuel Gato Martin - [Github](http://www.github.com/tiedra)
 
 # Ejemplos de código
 
