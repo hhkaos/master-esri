@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Usando la clase/tarea Locator</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/dijit/calcite.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/esri/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <style>
+    html, body, #mapDiv {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #search {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 20px;
+        left: 74px;
+    }
+    #basemapToggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 50;
+    }
+    </style>
+    <script>
+        var map;
+        var modulos = [
+            "esri/map",
+            "esri/geometry/Extent",
+            "esri/SpatialReference",
+            "esri/layers/ArcGISDynamicMapServiceLayer",
+            "esri/layers/FeatureLayer",
+            "esri/dijit/Search",
+            "esri/dijit/BasemapToggle",
+            "esri/dijit/Legend",
+            "esri/tasks/locator",
+            "dojo/domReady!"
+        ];
+        var callback = function(
+            Map,
+            Extent,
+            SpatialReference,
+            ArcGISDynamicMapServiceLayer,
+            FeatureLayer,
+            Search,
+            BasemapToggle,
+            Legend,
+            Locator
+        ) {
+            // Extension de UK
+            var obj = {
+                "xmin": -3709239.6281097676,
+                "ymin": 6120539.535598724,
+                "xmax": 2552481.729010206,
+                "ymax": 8160490.946472966,
+                "spatialReference": {
+                    "wkid": 102100
+                }
+            }
+            var sr = new SpatialReference({ wkid:obj.spatialReference.wkid });
+            var ext = new Extent(obj.xmin, obj.ymin, obj.xmax, obj.ymax, sr);
+
+            map = new Map("mapDiv", {
+                basemap: "satellite",
+                extent: ext
+            });
+
+            var gl =new ArcGISDynamicMapServiceLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer")
+            map.addLayer(gl);
+
+            //https://services1.arcgis.com/BjgJYiFmZRQK0RiM/ArcGIS/rest/services/Openflight_Airports/FeatureServer/0
+            var fl = new FeatureLayer("https://services1.arcgis.com/BjgJYiFmZRQK0RiM/ArcGIS/rest/services/Openflight_Airports/FeatureServer/0",{
+                definitionExpression: "Country = 'United Kingdom'"
+            });
+            //fl.setDefinitionExpression("Country = 'United Kingdom'");
+            map.addLayer(fl);
+
+            var search = new Search({
+                map: map
+            }, "search");
+            search.startup();
+            var params = {
+                "map": map
+            };
+            var basemapToggle = new BasemapToggle(params, "basemapToggle")
+            basemapToggle.startup();
+
+            var legendDijit = new Legend({
+                map: map
+            }, "legendDiv");
+            legendDijit.startup();
+
+            var locator = new Locator("https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer");
+
+            var params = {
+                text: "francia",
+                f: "json"
+            };
+            // var promesa = locator.suggestLocations(params);
+            // var callback = function(results){
+            //     console.log(results);
+            // };
+            // promesa.addCallback(callback);
+
+            locator.suggestLocations(params).addCallback(function(results){
+                console.log(results);
+            });
+
+        };
+
+        require(modulos, callback);
+    </script>
+</head>
+
+<body class="calcite">
+  <div id="search"></div>
+  <div id="mapDiv">
+      <div id="basemapToggle"></div>
+  </div>
+  <div id="legendDiv"></div>
+
+</body>
+
+</html>
