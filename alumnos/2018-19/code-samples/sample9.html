@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Query State Info without Map</title>
+    <style>
+        #info{padding:5px; margin:5px; background-color:#eee;}
+    </style>
+
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script>
+      require([
+        "dojo/dom",
+        "dojo/on",
+        "esri/tasks/query",
+        "esri/tasks/QueryTask",
+        "dojo/domReady!"
+      ], function (dom, on, Query, QueryTask) {
+
+        var demographicsService = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/5";
+        var queryTask = new QueryTask(demographicsService);
+
+        // Define the query
+        var query = new Query();
+        query.returnGeometry = false;
+        query.outFields = [
+          "SQMI", "STATE_NAME", "STATE_FIPS", "SUB_REGION", "STATE_ABBR",
+          "POP2000", "POP2007", "POP00_SQMI", "POP07_SQMI", "HOUSEHOLDS",
+          "MALES", "FEMALES", "WHITE", "BLACK", "AMERI_ES", "ASIAN", "OTHER",
+          "HISPANIC", "AGE_UNDER5", "AGE_5_17", "AGE_18_21", "AGE_22_29",
+          "AGE_30_39", "AGE_40_49", "AGE_50_64", "AGE_65_UP"
+        ];
+
+        // Build the HTML
+        var showResults = function (results) {
+          var resultItems = '';
+          var resultCount = results.features.length;
+
+          for (var i = 0; i < resultCount; i++) {
+            var featureAttributes = results.features[i].attributes;
+            for (var attr in featureAttributes) {
+              resultItems += `<b>${attr}:</b> ${featureAttributes[attr]} <br>`;
+            }
+            resultItems += '<br>';
+          }
+
+          dom.byId("info").innerHTML = resultItems;
+        }
+
+        // Execute the queryTask
+        var execute = function() {
+          query.text = dom.byId("stateName").value;
+
+          // Option a) Using 2nd parameters -> a callback
+          // queryTask.execute(query, showResults);
+
+          // Option b) Using the method ".addCallback" instead
+          // var promesa = queryTask.execute(query);
+          // promesa.addCallback(showResults);
+
+          // Option c) Using the method "".then"
+          queryTask.execute(query).then(showResults);
+        }
+
+        // Add the listener to the button
+        on(dom.byId("execute"), "click", execute);
+      });
+    </script>
+  </head>
+
+  <body>
+    US state name :
+    <input type="text" id="stateName" value="California">
+    <input id="execute" type="button" value="Get Details">
+    <br>
+    <br>
+    <div id="info"></div>
+  </body>
+</html>
