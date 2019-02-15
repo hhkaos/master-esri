@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Pintar un gráfico directamente sobre el mapa con JSAPI 3.x</title>
+    <title>Añadir un gráfico mediante clases con JSAPI 3.x</title>
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
     <script src="https://js.arcgis.com/3.27/"></script>
+    <script src="json.js"></script>
     <style>
       html, body, #mapDiv {
         height: 100%;
@@ -15,30 +16,21 @@
       }
     </style>
     <script>
-        var map, graphic;
-
-        require([
+        var map, marker, g;
+        var modulos = [
             "esri/map",
-            "esri/layers/GraphicsLayer",
-            "esri/graphic",
-            "esri/geometry/Point",
             "esri/symbols/SimpleMarkerSymbol",
             "esri/symbols/SimpleLineSymbol",
             "esri/Color",
+            "esri/graphic",
+            "esri/geometry/Point",
             "dojo/domReady!"
-        ],function(
-            Map,
-            GraphicsLayer,
-            Graphic,
-            Point,
-            SimpleMarkerSymbol,
-            SimpleLineSymbol,
-            Color
-        ){
+        ];
+        var callback = function(Map, SimpleMarkerSymbol, SimpleLineSymbol, Color, Graphic, Point) {
 
             map = new Map("mapDiv", {
-                basemap: "gray",
-                center: [-3, 40],
+                basemap: "satellite",
+                center: [-122.45, 37.75],
                 zoom: 13
             });
 
@@ -48,17 +40,14 @@
             marker = new SimpleMarkerSymbol();
             marker.setOutline(line);
             marker.setColor(new Color([0, 132, 168, 0.65]));
+            graphic = new Graphic(new Point(-122.45, 37.75), marker)
 
-            var graphicsLayer = new GraphicsLayer();
-            map.addLayer(graphicsLayer);
-
-            // create a new circle on the GraphicsLayer
-            map.on("click", function(e){
-                var graphic = new Graphic(new Point(e.mapPoint), marker);
-                graphicsLayer.add(graphic);
+            map.on("load",function(){
+                // Adding graphics to the map (without a GraphicLayer)
+                map.graphics.add(graphic);
             });
-
-        });
+        };
+        require(modulos, callback);
     </script>
 </head>
 

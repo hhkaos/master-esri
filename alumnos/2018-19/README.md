@@ -5,9 +5,9 @@
 
 # Ejemplos de código
 
-1. [Mostrar un mapa con JSAPI 3.27](./code-samples/sample1.html)
-2. [Mostrar un mapa con JSAPI 4.10](./code-samples/sample2.html)
-3. [Mostrar un mapa usando un Web map con la API 3.27](./code-samples/sample3.html)
+1. [Mostrar un mapa con JSAPI 3.x](./code-samples/sample1.html)
+2. [Mostrar un mapa con JSAPI 4.x](./code-samples/sample2.html)
+3. [Mostrar un mapa usando un Web map con la API 3.x](./code-samples/sample3.html)
 4. [Cargar un mapa centrado en una extensión](./code-samples/sample4.html)
 5. [Fijar una extensión y cargar una capa dinámica](./code-samples/sample5.html)
 6. [Fijar una extensión, cargar una capa dinámica y una de entidades](./code-samples/sample6.html)
@@ -16,3 +16,8 @@
 9. [Query State Info without Map](./code-samples/sample9.html)
 10. [Cargar el widget de direcciones con un proxy alojado en ArcGIS Online](./code-samples/sample10.html)
 11. [Usando la clase/tarea Locator](./code-samples/sample11.html)
+12. [Basic Service Area](./code-samples/sample12.html)
+13. [Pintar un gráfico construido a través de un JSON con la JSAPI 3.x](./code-samples/sample13.html)
+14. [Añadir un gráfico mediante clases con JSAPI 3.x](./code-samples/sample14.html)
+15. [Añadir un PictureMarkerSymbol con JSAPI 3.x](./code-samples/sample16.html)
+16. [Añadir un gráfico a una capa gráfica al hacer clic con la JSAPI 3.x](./code-samples/sample15.html)
