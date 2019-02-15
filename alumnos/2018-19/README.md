@@ -3,11 +3,12 @@
 * Raúl Jiménez Ortega - [Github](http://www.github.com/hhkaos) | [Linkedin](http://es.linkedin.com/in/jimenezortegaraul) | [Curriculum](https://hhkaos.github.io)
 * Pablo Fernández Rodríguez - [Github](https://github.com/pablo-ferro)
 * Mar Roca - [Github](https://github.com/marroca13)
-* Ana Fernandez Monterrubio
+* Ana Fernandez Monterrubio - [Github](https://github.com/anafermonte)
 * Samuel Gato Martin - [Github](http://www.github.com/tiedra)
-* Tania Trigo
-* [Óscar Sesmilo Bermejo](https://github.com/oscarsesmilo)
-* Carolina 
+* Tania Trigo - [Github](https://github.com/taniatrigo)
+* Óscar Sesmilo Bermejo - [Github](https://github.com/oscarsesmilo)
+* Carolina - [Github](https://github.com/MCBian10)
+* Myriam - [Github](https://github.com/myriamDominguez)
 
 # Ejemplos de código
 
