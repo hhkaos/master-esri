@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Recuperar elementos de un web map</title>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+<script src="https://js.arcgis.com/3.27compact/"></script>
+<style>
+  html, body, #mapDiv{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+<script>
+  var map, fLayer, geometries;
+  var modulos = [
+    "esri/map",
+    "esri/arcgis/utils",
+    "esri/graphicsUtils",
+    "dojo/domReady!"
+  ];
+  var callback = function(Map, arcgisUtils, graphicsUtils){
+
+      var promesa = arcgisUtils.createMap("8e42e164d4174da09f61fe0d3f206641", "mapDiv");
+      var callback = function (response) {
+        map = response.map;
+
+        // Get operational layers from the web map
+        var mapData = response.itemInfo.itemData;
+        console.log("mapData :", response.itemInfo.itemData);
+
+        // Recuperamos la feature layer
+        fLayer = map.getLayer(map.graphicsLayerIds[0]);
+        console.log("fLayer :", fLayer.id);
+
+        // Get graphics from the Featurelayer
+        fLayer.on("update-end", function(){
+            var graphics = fLayer.graphics;
+            console.log("Graphics: ", graphics);
+
+            //Get geometries from the graphics
+            geometries = graphicsUtils.getGeometries(graphics);
+            console.log("Geometries: ", geometries);
+        });
+
+      };
+      promesa.then(callback);
+
+  };
+  require(modulos, callback);
+</script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+
+</html>
