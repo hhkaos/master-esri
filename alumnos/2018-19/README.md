@@ -13,6 +13,7 @@
 * Roi Martínez Valladares - [Github](https://github.com/roimv) | [Linkedin](https://www.linkedin.com/in/roi-mart%C3%ADnez-valladares-35a49277/)
 * Marta Bescansa - [Github](https://github.com/martabescansa7)
 * Isabel Sierra Merino - [Github](http://github.com/siemeris) | [Linkedin](https://www.linkedin.com/in/isabelsierramerino/)
+* Raquel - [Github](https://github.com/RMAP2)
 
 # Ejemplos de código
 
