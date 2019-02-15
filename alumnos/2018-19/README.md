@@ -5,6 +5,7 @@
 * Mar Roca - [Github](https://github.com/marroca13)
 * Ana Fernandez Monterrubio
 * Samuel Gato Martin - [Github](http://www.github.com/tiedra)
+* Tania Trigo
 
 # Ejemplos de código
 
