@@ -12,6 +12,7 @@
     <script src="https://js.arcgis.com/3.27/"></script>
 
     <script>
+      var map, capaGrafica;
       require([
         "esri/map",
         "esri/layers/GraphicsLayer",
@@ -33,7 +34,7 @@
           basemap: "satellite"
         });
 
-      	var capaGrafica = new GraphicsLayer();
+      	capaGrafica = new GraphicsLayer();
       	map.addLayer(capaGrafica);
       	var item = {
           "lat" : "40.439",
