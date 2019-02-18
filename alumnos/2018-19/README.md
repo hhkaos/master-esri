@@ -16,6 +16,7 @@
 * Raquel - [Github](https://github.com/RMAP2)
 * Marina Valentín Ruiz - [Github](https://github.com/Oretana) | [Linkedin](https://www.linkedin.com/in/marina-valent%C3%ADn-ruiz-31587457/)
 * Ricardo Andrés Puentes - [Github](http://www.github.com/sinerf) 
+* [Github](http://www.github.com/tonilocust)
 
 # Ejemplos de código
 
