@@ -15,42 +15,37 @@
   }
 </style>
 <script>
-  var map, fLayer, geometries;
-  var modulos = [
-    "esri/map",
-    "esri/arcgis/utils",
-    "esri/graphicsUtils",
-    "dojo/domReady!"
-  ];
-  var callback = function(Map, arcgisUtils, graphicsUtils){
+  var map, fLayer, geometries, graphics;
 
-      var promesa = arcgisUtils.createMap("8e42e164d4174da09f61fe0d3f206641", "mapDiv");
-      var callback = function (response) {
+  require([
+        "esri/map",
+        "esri/arcgis/utils",
+        "esri/graphicsUtils",
+        "dojo/domReady!"
+      ], function(Map, arcgisUtils, graphicsUtils){
+
+      var webmapId = "8e42e164d4174da09f61fe0d3f206641";
+      arcgisUtils.createMap(webmapId, "mapDiv").then(function (response) {
         map = response.map;
 
         // Get operational layers from the web map
         var mapData = response.itemInfo.itemData;
-        console.log("mapData :", response.itemInfo.itemData);
+        console.log("mapData: ", mapData);
 
         // Recuperamos la feature layer
-        fLayer = map.getLayer(map.graphicsLayerIds[0]);
-        console.log("fLayer :", fLayer.id);
+        fLayer = map.getLayer(map.graphicsLayerIds[5]);
+        console.log("fLayer: ", fLayer);
 
         // Get graphics from the Featurelayer
         fLayer.on("update-end", function(){
-            var graphics = fLayer.graphics;
-            console.log("Graphics: ", graphics);
+          graphics = fLayer.graphics;
+          console.log("graphics: ", graphics);
 
-            //Get geometries from the graphics
-            geometries = graphicsUtils.getGeometries(graphics);
-            console.log("Geometries: ", geometries);
-        });
-
-      };
-      promesa.then(callback);
-
-  };
-  require(modulos, callback);
+          geometries = graphicsUtils.getGeometries(graphics);
+          console.log("Geometries: ", geometries);
+        })
+      });
+  });
 </script>
 </head>
 
