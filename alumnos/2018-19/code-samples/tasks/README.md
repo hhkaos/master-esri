@@ -11,6 +11,10 @@ Todas las tareas realizan peticiones HTTP a los servicios REST y por tanto son a
 |Operaciones geométricas|[GeometryService](https://developers.arcgis.com/javascript/3/jsapi/geometryservice-amd.html)| **[GeometryServer](https://developers.arcgis.com/rest/services-reference/geometry-service.htm)** (ej: [sample geometry server](https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/Geometry/GeometryServer), ...)
 |Renderizado|[GenerateRendererTask](https://developers.arcgis.com/javascript/3/jsapi/generaterenderertask-amd.html)|**[MapServer](https://developers.arcgis.com/rest/services-reference/map-service.htm)** (ej: [demographics sample](https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/), ...)
 
+Por lo que dependiendo lo que queramos hacer usaremos unas tareas u otras, aquí otra tabla. Aquí podemos ver qué tipo de preguntas nos ayuda a responder cáda una:
+
+![Tabla resumiendo los tipos de preguntas que ayudan a responder cada tarea](../../images/tareas-2.png)
+
 ## Tutoriales:
 
 * [Adding a task](https://developers.arcgis.com/javascript/3/jshelp/intro_firsttask.html)
