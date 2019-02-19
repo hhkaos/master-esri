@@ -12,6 +12,7 @@
 5. [Fijar una extensión y cargar una capa dinámica](./code-samples/sample5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample5.html))
 6. [Fijar una extensión, cargar una capa dinámica y una de entidades](./code-samples/sample6.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample6.html))
 7. [Cargar el widget Search](./code-samples/sample7.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7.html))
+7.5. [Trabajar con eventos](./code-samples/sample7.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_5.html))
 8. [Recuperar elementos de un web map](./code-samples/sample8.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample8.html))
 9. [Query State Info without Map](./code-samples/sample9.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample9.html))
 10. [Cargar el widget de direcciones con un proxy alojado en ArcGIS Online](./code-samples/sample10.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample10.html))
@@ -19,5 +20,18 @@
 12. [Ejemplo ServiceAreaTask básico](./code-samples/sample12.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample12.html))
 13. [Pintar un gráfico construido a través de un JSON con la JSAPI 3.x](./code-samples/sample13.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample13.html))
 14. [Añadir un gráfico mediante clases con JSAPI 3.x](./code-samples/sample14.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample14.html))
-15. [Añadir un PictureMarkerSymbol con JSAPI 3.x](./code-samples/sample16.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample15.html))
-16. [Añadir un gráfico a una capa gráfica al hacer clic con la JSAPI 3.x](./code-samples/sample15.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample16.html))
+15. [Añadir un PictureMarkerSymbol con JSAPI 3.x](./code-samples/sample15.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample15.html))
+16. [Añadir un gráfico a una capa gráfica al hacer clic con la JSAPI 3.x](./code-samples/sample16.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample16.html))
+
+---
+
+Ejemplos extra:
+
+7.5. [Eventos](./code-samples/sample7_5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_5.html))
+17. [Añadir un gráfico construido vía JSON a una capa gráfica al hacer clic en el mapa](./code-samples/sample17.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample17.html))
+
+Tasks:
+
+* [Ejemblo básico de QueryTask](./code-samples/tasks/QueryTask.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/tasks/QueryTask.html))
+* [Ejemplo básico de Locator](./code-samples/tasks/Locator.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/tasks/Locator.html))
+* [Ejemplo ServiceAreaTask básico](./code-samples/tasks/ServiceAreaTask.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/tasks/ServiceAreaTask.html))

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Añadir un gráfico construido vía JSON a una capa gráfica al hacer clic en el mapa</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+        var map, gLayer;
+
+        var graphicJSON = {
+		  "geometry": {
+			"x": -335074.06,
+			"y": 4867168.01,
+			"spatialReference": {
+			  "wkid": 102100,
+			  "latestWkid": 3857
+			}
+		  },
+		  "attributes": {
+			"VISIBLE": 1,
+			"TITLE": "Point",
+			"TYPEID": 1,
+			"OBJECTID": 0
+		  },
+		  "symbol": {
+			"color": [
+			  0,
+			  92,
+			  230,
+			  128
+			],
+			"size": 9,
+			"angle": 0,
+			"xoffset": 0,
+			"yoffset": 0,
+			"type": "esriSMS",
+			"style": "esriSMSCircle",
+			"outline": {
+			  "color": [
+				255,
+				255,
+				255,
+				255
+			  ],
+			  "width": 1.5,
+			  "type": "esriSLS",
+			  "style": "esriSLSSolid"
+			}
+		  }
+		};
+
+        require([
+            "esri/map",
+            "esri/graphic",
+            "esri/layers/GraphicsLayer",
+            "dojo/domReady!"
+        ],function(
+            Map, Graphic, GraphicsLayer
+        ){
+
+            map = new Map("mapDiv", {
+                basemap: "gray",
+                center: [-3, 40],
+                zoom: 13
+            });
+
+            gLayer = new GraphicsLayer();
+            map.addLayer(gLayer);
+
+
+
+            map.on("click", function(evt){
+
+            	graphicJSON.geometry = evt.mapPoint.toJson();
+
+            	var graphic = new Graphic(graphicJSON);
+
+            	gLayer.add(graphic);
+
+            })
+
+
+        });
+    </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+</body>
+
+</html>

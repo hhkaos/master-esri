@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Ejemplo básico de Locator</title>
+
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script>
+
+        require([
+            "esri/tasks/locator",
+            "esri/geometry/Point"
+        ], function(Locator, Point) {
+            // API Reference:
+            // https://developers.arcgis.com/javascript/3/jsapi/locator-amd.html
+            var locator = new Locator("https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer");
+
+            // suggestLocations
+            // https://developers.arcgis.com/javascript/3/jsapi/locator-amd.html#suggestlocations
+            locator.suggestLocations({
+                text: "francia",
+                f: "json"
+            }).then(function(results){
+                console.log("suggestLocations for Francia=",results);
+            });
+
+
+
+            // Method: addressToLocations
+            // https://developers.arcgis.com/javascript/3/jsapi/locator-amd.html#addresstolocations
+            locator.addressToLocations({
+                SingleLine: "Madrid",
+                f: "json"
+            }).then(function(results){
+                console.log("addressToLocations for Madrid=",results);
+            });
+
+
+
+            // Method: locationToAddress
+            // https://developers.arcgis.com/javascript/3/jsapi/locator-amd.html#locationtoaddress
+            var p = new Point(-3.705769, 40.420280);
+            locator.locationToAddress(p, 100).then(function(results){
+                console.log("locationToAddress for Madrid=",results);
+            });
+
+        });
+    </script>
+</head>
+
+<body class="calcite">
+    Abre la consola
+</body>
+
+</html>

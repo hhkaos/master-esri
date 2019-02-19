@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Ejemblo básico de QueryTask</title>
+
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script>
+      require([
+        "dojo/dom",
+        "dojo/on",
+        "esri/tasks/query",
+        "esri/tasks/QueryTask",
+        "dojo/domReady!"
+      ], function (dom, on, Query, QueryTask) {
+
+        var serviceURL = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer/5";
+        var queryTask = new QueryTask(serviceURL);
+
+        // Define the query
+        var query = new Query();
+        query.returnGeometry = false;
+        query.outFields = ["*"];
+
+        // Add the listener to the button
+        on(dom.byId("execute"), "click", function() {
+          debugger
+          query.text = dom.byId("stateName").value;
+          queryTask.execute(query).then(function (results) {
+            console.log("result=", results.features);
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    US state name :
+    <input type="text" id="stateName" value="California">
+    <input id="execute" type="button" value="Get Details">
+  </body>
+</html>

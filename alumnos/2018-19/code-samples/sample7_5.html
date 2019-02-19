@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <style>
+      html, body, #mapDiv {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #controls {
+        background: #fff;
+        box-shadow: 0 6px 6px -6px #999;
+        color: #444;
+        font-family: sans-serif;
+        height: auto;
+        left: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 1em;
+        width: auto;
+        z-index: 40;
+      }
+      #controls div {
+        padding: 0 0 1em 0;
+      }
+    </style>
+    <script>
+        require([
+            "esri/map",
+            "dojo/on",
+            "dojo/domReady!"
+        ], function(Map, on) {
+
+            var map = new Map("mapDiv", {
+                basemap: "satellite",
+                center: [-122.45, 37.75],
+                zoom: 13
+            });
+            
+            var el = document.getElementById("geodesic");
+
+            on(el, "click", function(evt){
+                console.log("evt=",evt);
+            });
+
+            map.on("click, dbl-click", function(evt){
+                console.log("evt.type=",evt.type);
+            });
+
+            map.on("extent-change", function(evt){
+                console.log("extent-change=",evt);
+            });
+
+            map.on("pan", function(evt){
+                console.log("pan=",evt);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+  <div id="mapDiv"></div>
+  <div id="controls">
+      <div>Click the map.</div>
+      <input type="checkbox" id="geodesic">
+      <label for="geodesic">Geodesic?</label>
+    </div>
+</body>
+
+</html>
