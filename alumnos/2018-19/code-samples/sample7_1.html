@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Eventos en Dojo</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script>
+        var map;
+
+        require([
+            "dojo/on",
+            "dojo/dom",
+            "dojo/domReady!"
+        ], function(
+            on,
+            dom
+        ) {
+            var checkbox = dom.byId("geodesic");
+            var callback = function(){
+                console.log("click");
+            }
+            on(checkbox, "click", callback);
+      });
+    </script>
+  </head>
+  <body>
+    <input type="checkbox" id="geodesic">
+  </body>
+</html>

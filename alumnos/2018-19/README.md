@@ -15,7 +15,7 @@
 * Isabel Sierra Merino - [Github](http://github.com/siemeris) | [Linkedin](https://www.linkedin.com/in/isabelsierramerino/)
 * Raquel - [Github](https://github.com/RMAP2)
 * Marina Valentín Ruiz - [Github](https://github.com/Oretana) | [Linkedin](https://www.linkedin.com/in/marina-valent%C3%ADn-ruiz-31587457/)
-* Ricardo Andrés Puentes - [Github](http://www.github.com/sinerf) 
+* Ricardo Andrés Puentes - [Github](http://www.github.com/sinerf)
 * [Github](http://www.github.com/tonilocust)
 
 # Ejemplos de código
@@ -27,7 +27,8 @@
 5. [Fijar una extensión y cargar una capa dinámica](./code-samples/sample5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample5.html))
 6. [Fijar una extensión, cargar una capa dinámica y una de entidades](./code-samples/sample6.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample6.html))
 7. [Cargar el widget Search](./code-samples/sample7.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7.html))<br>
-7.5. [Trabajar con eventos](./code-samples/sample7.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_5.html))
+7.1. [Trabajar con eventos en Dojo](./code-samples/sample7_1.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_1.html))
+7.5. [Trabajar con eventos en la API JS](./code-samples/sample7_5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_5.html))
 8. [Recuperar elementos de un web map](./code-samples/sample8.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample8.html))
 9. [Query State Info without Map](./code-samples/sample9.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample9.html))
 10. [Cargar el widget de direcciones con un proxy alojado en ArcGIS Online](./code-samples/sample10.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample10.html))
