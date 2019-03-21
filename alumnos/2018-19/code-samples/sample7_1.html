@@ -19,13 +19,17 @@
         ) {
             var checkbox = dom.byId("geodesic");
             var callback = function(){
-                console.log("click");
+                alert("click");
             }
             on(checkbox, "click", callback);
       });
     </script>
   </head>
   <body>
-    <input type="checkbox" id="geodesic">
+      <h1>Disparador del elemento #geodesic para el evento click </h1>
+      <p>
+          Haz click en este checkbox parar disparar una alerta:
+          <input type="checkbox" id="geodesic">
+      </p>
   </body>
 </html>
