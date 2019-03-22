@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Fijar una extensión, cargar una capa dinámica y una de entidades</title>
+    <title>Cargar una capa de entidades</title>
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
     <script src="https://js.arcgis.com/3.27/"></script>
     <style>
@@ -18,33 +18,14 @@
         var map;
         var modulos = [
             "esri/map",
-            "esri/geometry/Extent",
-            "esri/SpatialReference",
-            "esri/layers/ArcGISDynamicMapServiceLayer",
             "esri/layers/FeatureLayer",
             "dojo/domReady!"
         ];
-        var callback = function(Map, Extent, SpatialReference, ArcGISDynamicMapServiceLayer, FeatureLayer) {
-            // Extension de UK
-            var obj = {
-              "xmin": -3709239.6281097676,
-              "ymin": 6120539.535598724,
-              "xmax": 2552481.729010206,
-              "ymax": 8160490.946472966,
-              "spatialReference": {
-                "wkid": 102100
-              }
-            }
-            var sr = new SpatialReference({ wkid:obj.spatialReference.wkid });
-            var ext = new Extent(obj.xmin, obj.ymin, obj.xmax, obj.ymax, sr);
+        var callback = function(Map, FeatureLayer) {
 
             map = new Map("mapDiv", {
-                basemap: "satellite",
-                extent: ext
+                basemap: "satellite"
             });
-
-            var gl =new ArcGISDynamicMapServiceLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer")
-            map.addLayer(gl);
 
             var fl = new FeatureLayer("https://services1.arcgis.com/BjgJYiFmZRQK0RiM/ArcGIS/rest/services/Openflight_Airports/FeatureServer/0",{
                 definitionExpression: "Country = 'United Kingdom'"

@@ -24,8 +24,8 @@
 2. [Mostrar un mapa con JSAPI 4.x](./code-samples/sample2.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample2.html))
 3. [Mostrar un mapa usando un Web map con la API 3.x](./code-samples/sample3.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample3.html))
 4. [Cargar un mapa centrado en una extensión](./code-samples/sample4.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample4.html))
-5. [Fijar una extensión y cargar una capa dinámica](./code-samples/sample5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample5.html))
-6. [Fijar una extensión, cargar una capa dinámica y una de entidades](./code-samples/sample6.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample6.html))
+5. [Cargar una capa dinámica](./code-samples/sample5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample5.html))
+6. [Cargar una capa de entidades](./code-samples/sample6.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample6.html))
 7. [Cargar el widget Search](./code-samples/sample7.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7.html))<br>
 7.1. [Trabajar con eventos en Dojo](./code-samples/sample7_1.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_1.html))
 7.5. [Trabajar con eventos en la API JS](./code-samples/sample7_5.html) ([Live demo](https://hhkaos.github.io/master-esri/alumnos/2018-19/code-samples/sample7_5.html))

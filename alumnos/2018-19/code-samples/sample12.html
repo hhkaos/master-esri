@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
   <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
   <style>
-    body, html, #main {
+    body, html, #main,#map {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -48,7 +48,8 @@
       params.returnFacilities = false;
       params.defaultBreaks; // 1 minute
 
-      serviceAreaTask = new ServiceAreaTask("<hosted proxy>");
+      // Más info sobre los proxies: https://esri-es.github.io/intro-jsapi-3x/mapjournal/?section=8
+      serviceAreaTask = new ServiceAreaTask("https://utility.arcgis.com/usrsvcs/appservices/aqo2ToM5vvzyBfKt/rest/services/World/ServiceAreas/NAServer/ServiceArea_World/solveServiceArea");
 
       map.on("click", function(evt) {
         //clear existing graphics

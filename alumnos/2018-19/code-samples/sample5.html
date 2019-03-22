@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-    <title>Fijar una extensión y cargar una capa dinámica</title>
+    <title>Cargar una capa dinámica</title>
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css"/>
     <style>
       html, body, #mapDiv{
@@ -19,28 +19,16 @@
 
       require([
         "esri/map",
-        "esri/layers/ArcGISDynamicMapServiceLayer",
-        "esri/layers/FeatureLayer",
-        "esri/geometry/Extent",
-        "esri/SpatialReference"
+        "esri/layers/ArcGISDynamicMapServiceLayer"
       ], function (
         Map,
-        ArcGISDynamicMapServiceLayer,
-        FeatureLayer,
-        Extent,
-        SpatialReference) {
-            var xmin = -7047846.594920191,
-                ymin = 5268180.6785623655,
-                xmax = 5328837.0250122575,
-                ymax = 9181756.52676235,
-                sr = new SpatialReference({ wkid:102100 }),
-                e = new Extent(xmin, ymin, xmax, ymax, sr);
+        ArcGISDynamicMapServiceLayer) {
 
-        map = new Map("mapDiv", {extent: e});
+            map = new Map("mapDiv");
 
-        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer");
+            var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer");
 
-        map.addLayer(dynamicMapServiceLayer);
+            map.addLayer(dynamicMapServiceLayer);
       });
     </script>
   </head>

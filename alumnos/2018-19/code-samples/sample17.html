@@ -77,19 +77,11 @@
             gLayer = new GraphicsLayer();
             map.addLayer(gLayer);
 
-
-
             map.on("click", function(evt){
-
             	graphicJSON.geometry = evt.mapPoint.toJson();
-
             	var graphic = new Graphic(graphicJSON);
-
             	gLayer.add(graphic);
-
             })
-
-
         });
     </script>
 </head>
