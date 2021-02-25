@@ -1,0 +1,93 @@
+// ---------------------------------------------------
+// Code Snippets for Exercise: Viewshed Analysis
+// ---------------------------------------------------
+
+
+/*
+ * URLs used in this exercise
+ * 
+ * Viewshed Task on ArcGIS Online:
+ *   http://sampleserver6.arcgisonline.com/arcgis/rest/services/Elevation/ESRI_Elevation_World/GPServer/Viewshed
+ *
+ *
+ */
+
+
+// ---------------------------------------------------
+
+    /*
+     * Step: Construct the Geoprocessor
+     */
+    var gpViewshed = new Geoprocessor("Paste_in_URL_to_Viewshed_Task");
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Prepare the first input parameter
+       */
+      var fsInputPoint = new FeatureSet();
+      fsInputPoint.features.push(graphicViewpoint);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Prepare the second input parameter
+       */      
+      var luDistance = new LinearUnit();
+      luDistance.distance = 5;
+      luDistance.units = "esriMiles";
+      
+      
+// ---------------------------------------------------      
+      
+      /*
+       * Step: Build the input parameters into a JSON-formatted object
+       */
+      var gpParams = {
+        "Input_Observation_Point" : fsInputPoint,
+        "Viewshed_Distance" : luDistance
+      };
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Wire and execute the Geoprocessor
+       */
+      gpViewshed.on("execute-complete", displayViewshed);
+      gpViewshed.execute(gpParams);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Extract the array of features from the results
+       */
+      var pvResult = results.results[0];
+      var gpFeatureRecordSetLayer = pvResult.value;
+      var arrayFeatures = gpFeatureRecordSetLayer.features;
+      
+
+// ---------------------------------------------------
+
+        /*
+         * Step: Symbolize and add each graphic to the map's graphics layer
+         */
+        feature.setSymbol(sfsResultPolygon);
+        mapMain.graphics.add(feature);
+
+
+// ---------------------------------------------------
+
+      /*
+       * Step: Set the spatial reference for output geometries
+       */
+      gpViewshed.outSpatialReference = mapMain.spatialReference;
+
+
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+

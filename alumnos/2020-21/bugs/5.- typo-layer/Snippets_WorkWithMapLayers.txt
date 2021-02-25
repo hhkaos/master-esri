@@ -1,0 +1,93 @@
+// ---------------------------------------------------
+// Code Snippets for Exercise: Work with Map Layers
+// ---------------------------------------------------
+//
+// ---------------------------------------------------
+
+
+/*
+ * URLs used in this exercise
+ * 
+ * USA map service on sampleserver6.arcgisonline.com
+ *   http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer
+ *
+ * Earthquakes hosted feature layer
+ *   http://services.arcgis.com/ue9rwulIoeLEI9bj/arcgis/rest/services/Earthquakes/FeatureServer/0
+ *
+ */
+
+
+// ---------------------------------------------------
+
+
+    /*
+     * Step: Specify the initial extent
+     * Note: Exact coordinates may vary slightly from snippet/solution  
+     * Reference: https://developers.arcgis.com/javascript/jssamples/fl_any_projection.html	
+     */
+    var extentInitial = new Extent({
+      "xmin" : -14374651.058794111,
+      "ymin" : 3597572.9883619756,
+      "xmax" : -12408079.19507362,
+      "ymax" : 5441845.606826218,
+      "spatialReference" : {
+        "wkid" : 102100
+      }
+    });
+
+
+
+// ---------------------------------------------------
+
+    /*
+     * Step: Add the USA map service to the map
+     */
+    var lyrUSA = new ArcGISDynamicMapServiceLayer("Paste_in_URL_to_USA_map_service", {
+      opacity : 0.5
+    });
+    mapMain.addLayer(lyrUSA);
+
+    
+// ---------------------------------------------------    
+        
+    /*
+     * Step: Add the earthquakes layer to the map
+     */
+    var lyrQuakes = new FeatureLayer("Paste_in_URL_to_Earthquakes_layer");
+    lyrQuakes.setDefinitionExpression("MAGNITUDE >= 2.0");
+    mapMain.addLayer(lyrQuakes);
+
+
+// ---------------------------------------------------    
+
+    /*
+     * Step: Add the BasemapToggle widget to the map
+     */
+    
+     var toggle = new BasemapToggle({
+          map: mapMain,
+          basemap: "topo"
+      }, "BasemapToggle");
+      toggle.startup();
+
+// ---------------------------------------------------    
+
+    /*
+     * Step: Revise code to use the addLayers() method
+     */
+    
+     mapMain.addLayers([lyrUSA, lyrQuakes]);
+
+// ---------------------------------------------------  
+
+    /*
+     * Step: Add a legend once all layers have been added to the map
+     */
+    mapMain.on("layers-add-result", function() {
+      var dijitLegend = new Legend({
+        map : mapMain,
+        arrangement : Legend.ALIGN_RIGHT
+      }, "divLegend");
+      dijitLegend.startup();
+    }); // stub)
+    

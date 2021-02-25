@@ -1,0 +1,64 @@
+// ---------------------------------------------------
+// Code Snippets for Exercise: Work with Web Maps 
+// ---------------------------------------------------
+//
+// ---------------------------------------------------
+
+
+/*
+ * Web Maps used in this exercise
+ * 
+ * Earthquake web map on ArcGIS Online
+ *   http://www.arcgis.com/home/item.html?id=7d987ba67f4640f0869acb82ba064228
+ *
+ */
+
+
+// ---------------------------------------------------
+
+
+    /*
+     * Step: Update the Web Map Id
+     */
+    
+    var webmapId = "7d987ba67f4640f0869acb82ba064228";
+
+
+// ---------------------------------------------------
+
+    /*
+     * Step: Get the map from the response
+     */
+    
+     mapMain = response.map;
+    
+
+    
+// ---------------------------------------------------    
+        
+     
+
+    /*
+     * Step: Add the BasemapGallery widget to the map
+     */
+    
+     
+     var basemapGallery = new BasemapGallery({
+                   showArcGISBasemaps: true,
+                   map: mapMain
+               }, "basemapGallery");
+               basemapGallery.startup();
+
+
+// ---------------------------------------------------  
+
+    /*
+     * Step: Update the legend to use a webmap
+     */
+       legendLayers = arcgisUtils.getLegendLayers(response);
+               var dijitLegend = new Legend({
+                   map: mapMain,
+                   arrangement : Legend.ALIGN_RIGHT,
+                   layerInfos: legendLayers
+               },"divLegend");
+               dijitLegend.startup();

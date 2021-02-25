@@ -1,0 +1,79 @@
+      html, body { 
+        height: 100%; width: 100%; margin: 0; 
+      } 
+      body{
+        background-color:white; overflow:hidden; 
+        font-family: "Trebuchet MS"; 
+      }
+       #map {
+       margin: 5px;
+        border:solid 4px #224a54;
+        -moz-border-radius: 4px;       
+      }
+/* DEFINICIÓN DEL PANEL BUSCAR*/
+      #Buscar {
+        position: absolute;
+        top: 27px;
+        left: 70px;
+        z-index: 50;
+      }
+
+      #BaseMapGallery {
+        position: absolute;
+        top: 270px;
+        left: 700px;
+        z-index: 50;
+      }
+
+      #Over {
+        position: absolute;
+        top: 700px;
+        left: 500px;
+        z-index: 50;
+      }
+
+      #map_root{
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      #header {
+        background-image: url(../images/banner.jpg); background-repeat: repeat-x;
+        margin: 2px;
+        border: solid 4px #224a54;
+        color:white; font-size:18pt; 
+        text-align:left; font-weight:bold; height:70px;
+      }
+      #subheader {
+        font-size:small;
+        color:white;
+        padding-left:20px;
+      }
+      #rightPane{
+        background-color:white;
+        color:#3f3f3f;
+        border: solid 2px #224a54;
+        width:20%;
+      }
+      #leftPane{
+        margin: 5px;
+        padding:2px;
+        background-color:white;
+        color:#3f3f3f;
+        border: solid 2px #224a54;
+        width:20%;
+     }
+
+      #footer {
+        margin: 2px;
+        border: solid 2px #224a54;
+        background-color:#ecefe4;color:#3f3f3f;
+       font-size:10pt; text-align:center; height:40px;
+      }
+      .dijitTabInnerDiv{
+        background-color:#ffffff;
+      }
+      #tabs{
+        padding:5px;
+      }
+     
