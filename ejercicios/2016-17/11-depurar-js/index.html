@@ -48,7 +48,8 @@
       });
 
 
-      $('#help').click(function(){
+      //$('#help').click(function(){ id it´s wrong.
+      $('#btnHelp').click(function(){
         $('#help').toggleClass('hidden');
       });
 
@@ -61,7 +62,8 @@
       }];
 
       for(var f in features){
-        var featureLayer = new FeatureLayer(features[1].url);
+        //var featureLayer = new FeatureLayer(features[1].url); this code only add one layer
+        var featureLayer = new FeatureLayer(features[f].url);
         map.addLayer(featureLayer);
       }
 
@@ -80,7 +82,8 @@
         var tmp = '';
 
         for(var r in rows){
-          tmp += datos.feed.entry[r].title.type + ', ';
+          //tmp += datos.feed.entry[r].title.type + ', '; it call type and you want $t
+          tmp += datos.feed.entry[r].title.$t + ', ';
 
         }
 
